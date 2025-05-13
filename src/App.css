@@ -40,3 +40,116 @@
 .read-the-docs {
   color: #888;
 }
+
+:root {
+  --primary-color: #2563eb;
+  --background-color: #f8fafc;
+  --card-background: #ffffff;
+  --text-color: #1e293b;
+  --border-color: #e2e8f0;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--background-color);
+  min-height: 100vh;
+}
+
+/* Dashboard styles */
+.dashboard {
+  padding: 1rem;
+}
+
+.plan-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.plan-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.plan-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+/* Plan view styles */
+.plan-view {
+  padding: 1rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.task-card {
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+.task-card.rest {
+  background-color: #f1f5f9;
+}
+
+.field {
+  margin-top: 1rem;
+}
+
+.field-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.field-controls button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.75rem;
+  cursor: pointer;
+}
+
+.field-controls button:hover {
+  opacity: 0.9;
+}
+
+.execute-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.125rem;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.execute-button:hover {
+  opacity: 0.9;
+}
