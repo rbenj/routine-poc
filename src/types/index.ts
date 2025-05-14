@@ -12,7 +12,7 @@ export interface Field {
 }
 
 export interface Task {
-    type: TaskType;
+    type: 'task';
     name: string;
     estimatedTimeSec: number;
     fields?: Field[];
