@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from './views/Dashboard';
 import PlanView from './views/PlanView';
 import PlanExecution from './views/PlanExecution';
-import './App.css'
+import './App.css';
 
 function App() {
   return (

@@ -3,31 +3,31 @@ export type InitialValueSource = 'default' | 'memory';
 export type TaskType = 'task' | 'rest';
 
 export interface Field {
-    name: string;
-    type: FieldType;
-    initialValueSource: InitialValueSource;
-    defaultValue: number;
-    minValue: number;
-    maxValue: number;
+  name: string;
+  type: FieldType;
+  initialValueSource: InitialValueSource;
+  defaultValue: number;
+  minValue: number;
+  maxValue: number;
 }
 
 export interface Task {
-    type: 'task';
-    name: string;
-    estimatedTimeSec: number;
-    fields?: Field[];
+  type: 'task';
+  name: string;
+  estimatedTimeSec: number;
+  fields?: Field[];
 }
 
 export interface Rest {
-    type: 'rest';
-    durationSec: number;
+  type: 'rest';
+  durationSec: number;
 }
 
 export interface Plan {
-    name: string;
-    tasks: (Task | Rest)[];
+  name: string;
+  tasks: (Task | Rest)[];
 }
 
 export interface PlanState {
-    plans: Plan[];
-} 
+  plans: Plan[];
+}
