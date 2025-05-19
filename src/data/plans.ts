@@ -1,19 +1,23 @@
-import type { Plan } from '../types';
+import type { PlanData } from '@/models';
+import { DayOfWeek } from '@/types';
 
-export const plans: Plan[] = [
+const data: PlanData[] = [
   {
     name: 'Pull Day',
-    tasks: [
+    assignment: [{ dayOfWeek: DayOfWeek.Monday, order: 1 }],
+    items: [
       {
         type: 'task',
+        key: '30aefa8f',
         name: 'Warmup',
-        estimatedTimeSec: 300,
+        set: 0,
+        estimatedSeconds: 300,
         fields: [
           {
             name: 'Time',
             type: 'timer_down',
             initialValueSource: 'default',
-            defaultValue: 11,
+            defaultValue: 300,
             minValue: 0,
             maxValue: 900,
           },
@@ -21,45 +25,49 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 10,
+        durationSeconds: 60,
       },
       {
         type: 'task',
-        name: "Farmer's Carry",
-        estimatedTimeSec: 90,
+        key: '48d54cac',
+        name: 'Farmer\'s Carry',
+        set: 0,
+        estimatedSeconds: 90,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 120,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 500,
           },
           {
-            name: 'Reps',
-            type: 'int',
+            name: 'Time',
+            type: 'timer_down',
             initialValueSource: 'default',
-            defaultValue: 12,
-            minValue: 1,
-            maxValue: 36,
+            defaultValue: 90,
+            minValue: 0,
+            maxValue: 300,
           },
         ],
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '07cf1a1e',
         name: 'Incline DB Curl',
-        estimatedTimeSec: 120,
+        set: 1,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 40,
             minValue: 0,
             maxValue: 100,
           },
@@ -75,18 +83,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'bdb40d77',
         name: 'Incline DB Curl',
-        estimatedTimeSec: 120,
+        set: 2,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 40,
             minValue: 0,
             maxValue: 100,
           },
@@ -102,18 +112,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '5defe37d',
         name: 'Incline DB Curl',
-        estimatedTimeSec: 120,
+        set: 3,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 40,
             minValue: 0,
             maxValue: 100,
           },
@@ -129,18 +141,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '503e0cf9',
         name: 'Hammer Curl',
-        estimatedTimeSec: 120,
+        set: 1,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 40,
             minValue: 0,
             maxValue: 100,
           },
@@ -156,18 +170,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'dd3949a2',
         name: 'Hammer Curl',
-        estimatedTimeSec: 120,
+        set: 2,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 40,
             minValue: 0,
             maxValue: 100,
           },
@@ -183,18 +199,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '4b486d57',
         name: 'Hammer Curl',
-        estimatedTimeSec: 120,
+        set: 3,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 40,
             minValue: 0,
             maxValue: 100,
           },
@@ -210,18 +228,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '15bc1751',
         name: 'Cable External Rotation',
-        estimatedTimeSec: 240,
+        set: 1,
+        estimatedSeconds: 240,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 25,
             minValue: 0,
             maxValue: 100,
           },
@@ -237,18 +257,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'b153b02e',
         name: 'Cable External Rotation',
-        estimatedTimeSec: 240,
+        set: 2,
+        estimatedSeconds: 240,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 25,
             minValue: 0,
             maxValue: 100,
           },
@@ -264,18 +286,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '5679803d',
         name: 'Cable External Rotation',
-        estimatedTimeSec: 240,
+        set: 3,
+        estimatedSeconds: 240,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 25,
             minValue: 0,
             maxValue: 100,
           },
@@ -291,20 +315,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '0f7d3588',
         name: 'DB Row',
-        estimatedTimeSec: 240,
+        set: 1,
+        estimatedSeconds: 240,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 60,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
           },
           {
             name: 'Reps',
@@ -318,20 +344,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '130ef5e4',
         name: 'DB Row',
-        estimatedTimeSec: 240,
+        set: 2,
+        estimatedSeconds: 240,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 60,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
           },
           {
             name: 'Reps',
@@ -345,20 +373,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '3e2b26ae',
         name: 'DB Row',
-        estimatedTimeSec: 240,
+        set: 3,
+        estimatedSeconds: 240,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 60,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
           },
           {
             name: 'Reps',
@@ -372,17 +402,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
     ],
   },
   {
     name: 'Push Day',
-    tasks: [
+    assignment: [{ dayOfWeek: DayOfWeek.Wednesday, order: 1 }],
+    items: [
       {
         type: 'task',
+        key: '96d9de61',
         name: 'Warmup',
-        estimatedTimeSec: 300,
+        set: 0,
+        estimatedSeconds: 300,
         fields: [
           {
             name: 'Time',
@@ -396,47 +429,51 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '59d54ddc',
         name: 'Waiter Walk',
-        estimatedTimeSec: 90,
+        set: 0,
+        estimatedSeconds: 90,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 60,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
           },
           {
-            name: 'Reps',
-            type: 'int',
+            name: 'Time',
+            type: 'timer_down',
             initialValueSource: 'default',
-            defaultValue: 12,
-            minValue: 1,
-            maxValue: 36,
+            defaultValue: 90,
+            minValue: 0,
+            maxValue: 300,
           },
         ],
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'c43bac4a',
         name: 'DB Incline Press',
-        estimatedTimeSec: 120,
+        set: 1,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 70,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
           },
           {
             name: 'Reps',
@@ -450,20 +487,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '7e8865c2',
         name: 'DB Incline Press',
-        estimatedTimeSec: 120,
+        set: 2,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 70,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
           },
           {
             name: 'Reps',
@@ -477,20 +516,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '44f729bb',
         name: 'DB Incline Press',
-        estimatedTimeSec: 120,
+        set: 3,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 70,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
           },
           {
             name: 'Reps',
@@ -504,20 +545,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '2ffc3cf7',
         name: 'Cable Rope Pushdown',
-        estimatedTimeSec: 120,
+        set: 1,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 70,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
           },
           {
             name: 'Reps',
@@ -531,20 +574,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '67455da2',
         name: 'Cable Rope Pushdown',
-        estimatedTimeSec: 120,
+        set: 2,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 70,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
           },
           {
             name: 'Reps',
@@ -558,20 +603,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '138c5654',
         name: 'Cable Rope Pushdown',
-        estimatedTimeSec: 120,
+        set: 3,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 70,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
           },
           {
             name: 'Reps',
@@ -585,18 +632,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'ec208aed',
         name: 'DB Chest Fly',
-        estimatedTimeSec: 120,
+        set: 1,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 35,
             minValue: 0,
             maxValue: 100,
           },
@@ -612,18 +661,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '0e585490',
         name: 'DB Chest Fly',
-        estimatedTimeSec: 120,
+        set: 2,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 35,
             minValue: 0,
             maxValue: 100,
           },
@@ -639,18 +690,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'cbfa40ea',
         name: 'DB Chest Fly',
-        estimatedTimeSec: 120,
+        set: 3,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 35,
             minValue: 0,
             maxValue: 100,
           },
@@ -666,18 +719,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'e5965094',
         name: 'DB Lateral Raise',
-        estimatedTimeSec: 120,
+        set: 1,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 25,
             minValue: 0,
             maxValue: 100,
           },
@@ -693,18 +748,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '5479caa8',
         name: 'DB Lateral Raise',
-        estimatedTimeSec: 120,
+        set: 2,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 25,
             minValue: 0,
             maxValue: 100,
           },
@@ -720,18 +777,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '524541f7',
         name: 'DB Lateral Raise',
-        estimatedTimeSec: 120,
+        set: 3,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 25,
             minValue: 0,
             maxValue: 100,
           },
@@ -747,74 +806,83 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'fcf558c5',
         name: 'Pushups',
-        estimatedTimeSec: 120,
+        set: 1,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Reps',
             type: 'int',
             initialValueSource: 'default',
-            defaultValue: 20,
+            defaultValue: 50,
             minValue: 1,
-            maxValue: 50,
+            maxValue: 100,
           },
         ],
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '24340b8f',
         name: 'Pushups',
-        estimatedTimeSec: 120,
+        set: 2,
+        estimatedSeconds: 100,
         fields: [
           {
             name: 'Reps',
             type: 'int',
             initialValueSource: 'default',
-            defaultValue: 20,
+            defaultValue: 35,
             minValue: 1,
-            maxValue: 50,
+            maxValue: 100,
           },
         ],
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '87b834d8',
         name: 'Pushups',
-        estimatedTimeSec: 120,
+        set: 3,
+        estimatedSeconds: 60,
         fields: [
           {
             name: 'Reps',
             type: 'int',
             initialValueSource: 'default',
-            defaultValue: 20,
+            defaultValue: 25,
             minValue: 1,
-            maxValue: 50,
+            maxValue: 100,
           },
         ],
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
     ],
   },
   {
     name: 'Leg Day',
-    tasks: [
+    assignment: [{ dayOfWeek: DayOfWeek.Friday, order: 1 }],
+    items: [
       {
         type: 'task',
+        key: '678fbfea',
         name: 'Warmup',
-        estimatedTimeSec: 300,
+        set: 0,
+        estimatedSeconds: 300,
         fields: [
           {
             name: 'Time',
@@ -828,47 +896,51 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
-        name: "Farmer's Carry",
-        estimatedTimeSec: 90,
+        key: '48d54cac',
+        name: 'Farmer\'s Carry',
+        set: 0,
+        estimatedSeconds: 90,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 120,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 500,
           },
           {
-            name: 'Reps',
-            type: 'int',
+            name: 'Time',
+            type: 'timer_down',
             initialValueSource: 'default',
-            defaultValue: 12,
-            minValue: 1,
-            maxValue: 36,
+            defaultValue: 90,
+            minValue: 0,
+            maxValue: 300,
           },
         ],
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'f8aa5b58',
         name: 'Glute Bridge',
-        estimatedTimeSec: 120,
+        set: 1,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 18.1437,
+            defaultValue: 100,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 500,
           },
           {
             name: 'Reps',
@@ -882,20 +954,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'd672ee6d',
         name: 'Glute Bridge',
-        estimatedTimeSec: 120,
+        set: 2,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 18.1437,
+            defaultValue: 100,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 500,
           },
           {
             name: 'Reps',
@@ -909,20 +983,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'dbc1af82',
         name: 'Glute Bridge',
-        estimatedTimeSec: 120,
+        set: 3,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 18.1437,
+            defaultValue: 100,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 500,
           },
           {
             name: 'Reps',
@@ -936,18 +1012,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'ea693419',
         name: 'DB Reverse Lunge',
-        estimatedTimeSec: 120,
+        set: 1,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 40,
             minValue: 0,
             maxValue: 100,
           },
@@ -963,18 +1041,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '6efc8b43',
         name: 'DB Reverse Lunge',
-        estimatedTimeSec: 120,
+        set: 2,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 40,
             minValue: 0,
             maxValue: 100,
           },
@@ -990,18 +1070,20 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '9db64f1d',
         name: 'DB Reverse Lunge',
-        estimatedTimeSec: 120,
+        set: 3,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 40,
             minValue: 0,
             maxValue: 100,
           },
@@ -1017,20 +1099,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: 'f2cfa767',
         name: 'BB RDL',
-        estimatedTimeSec: 120,
+        set: 1,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 100,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 500,
           },
           {
             name: 'Reps',
@@ -1044,20 +1128,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '02790afa',
         name: 'BB RDL',
-        estimatedTimeSec: 120,
+        set: 2,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 100,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 500,
           },
           {
             name: 'Reps',
@@ -1071,20 +1157,22 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
       },
       {
         type: 'task',
+        key: '73d5f6d3',
         name: 'BB RDL',
-        estimatedTimeSec: 120,
+        set: 3,
+        estimatedSeconds: 120,
         fields: [
           {
             name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 4.53592,
+            defaultValue: 100,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 500,
           },
           {
             name: 'Reps',
@@ -1098,28 +1186,55 @@ export const plans: Plan[] = [
       },
       {
         type: 'rest',
-        durationSec: 60,
+        durationSeconds: 60,
+      },
+      {
+        type: 'task',
+        key: '41d4fad',
+        name: 'All Direction Box Step Ups',
+        set: 0,
+        estimatedSeconds: 300,
+        fields: [
+          {
+            name: 'Time',
+            type: 'timer_down',
+            initialValueSource: 'default',
+            defaultValue: 300,
+            minValue: 0,
+            maxValue: 900,
+          },
+        ],
       },
     ],
   },
   {
     name: 'Ruck',
-    tasks: [
+    assignment: [
+      { dayOfWeek: DayOfWeek.Tuesday, order: 2 },
+      { dayOfWeek: DayOfWeek.Thursday, order: 2 },
+      { dayOfWeek: DayOfWeek.Friday, order: 2 },
+      { dayOfWeek: DayOfWeek.Sunday, order: 2 },
+    ],
+    items: [
       {
         type: 'task',
+        key: 'ea9fa830',
         name: 'Ruck',
-        estimatedTimeSec: 3600,
+        set: 0,
+        estimatedSeconds: 3600,
         fields: [
           {
             name: 'Distance',
             type: 'distance',
             initialValueSource: 'memory',
-            defaultValue: 3218.69,
-            minValue: 804.672,
-            maxValue: 32186.9,
+            defaultValue: 3,
+            minValue: 0,
+            maxValue: 20,
           },
         ],
       },
     ],
   },
 ];
+
+export default data;

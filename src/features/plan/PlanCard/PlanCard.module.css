@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: var(--card-background);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+}
+
+.title {
+  font-weight: bold;
+}

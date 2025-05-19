@@ -1,0 +1,8 @@
+.plans {
+  display: flex;
+  flex-direction: column;
+}
+
+.plan:not(first-child) {
+  margin-top: 10px;
+}
