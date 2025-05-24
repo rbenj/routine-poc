@@ -12,8 +12,10 @@
   "dependencies": {
     "@types/react-router-dom": "^5.3.3",
     "classnames": "^2.5.1",
+    "normalize.css": "^8.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.0"
   },
   "devDependencies": {

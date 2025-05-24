@@ -1,14 +1,17 @@
 import { useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { usePlan, usePlanFields } from '@/features/plan';
+import { useParams } from 'react-router-dom';
+import { Button } from '@/components';
+import { PlanHeader, usePlan, usePlanFields } from '@/features/plan';
 import { TaskExecute, TaskQueue } from '@/features/task';
 import { RestExecute, RestQueue } from '@/features/rest';
+import { CelebrationIcon } from '@/icons';
 import type { Field } from '@/models';
 import { formatFuzzyDuration } from '@/utils';
 import styles from './ExecuteLayout.module.css';
 
 export function ExecuteLayout() {
   const [itemIndex, setItemIndex] = useState(0);
+  const [isComplete, setIsComplete] = useState(false);
 
   const { planName } = useParams();
   const plan = usePlan(planName);
@@ -29,34 +32,46 @@ export function ExecuteLayout() {
   const handleNextItem = () => {
     if (itemIndex + 1 < plan.items.length) {
       setItemIndex(prev => prev + 1);
+    } else {
+      setIsComplete(true);
     }
   };
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <Link to={`/plan/${encodeURIComponent(plan.name)}`} className={styles.back}>
-          ←
-        </Link>
+    <div className={styles.executeLayout}>
+      <PlanHeader
+        backTo={`/plan/${encodeURIComponent(plan.name)}`}
+        className={styles.header}
+        name={plan.name}
+        timeText={`About ${formatFuzzyDuration(remainingEstimatedSeconds)} left`}
+      />
 
-        <h2 className={styles.title}>
-          {plan.name}
-        </h2>
+      <div className={styles.progressBar}>
+        <div
+          className={styles.progressBarInner}
+          style={{ width: `${(estimatedSeconds - remainingEstimatedSeconds) / estimatedSeconds * 100}%` }}
+        />
+      </div>
 
-        <div className={styles.timeRemaining}>
-          {`About ${formatFuzzyDuration(remainingEstimatedSeconds)} left`}
+      {isComplete ? (
+        <div className={styles.complete}>
+          <CelebrationIcon className={styles.completeIcon} />
+
+          <div className={styles.completeTitle}>
+            Plan completed!
+          </div>
+
+          <Button
+            className={styles.completeButton}
+            text="Back to dashboard"
+            to="/"
+          />
         </div>
-
-        <div className={styles.progressBarContainer}>
-          <div
-            className={styles.progressBar}
-            style={{ width: `${(estimatedSeconds - remainingEstimatedSeconds) / estimatedSeconds * 100}%` }}
-          ></div>
-        </div>
-
-        <div className={styles.activeItem}>
+      ) : (
+        <>
           {item.type === 'task' ? (
             <TaskExecute
+              className={styles.item}
               estimatedSeconds={item.estimatedSeconds}
               fields={getTaskFields(item.key)}
               name={item.name}
@@ -69,40 +84,41 @@ export function ExecuteLayout() {
             />
           ) : (
             <RestExecute
+              className={styles.item}
               onClickContinue={handleNextItem}
               durationSeconds={item.durationSeconds}
             />
           )}
-        </div>
+        </>
+      )}
 
-        {queueItems.length > 0 && (
-          <div className={styles.queue}>
-            <div className={styles.queueTitle}>
-              Next Up
-            </div>
-
-            <div className={styles.queueItems}>
-              {queueItems.map((item, index) => {
-                return (
-                  <div key={index} className={styles.queueItem}>
-                    {item.type === 'task' ? (
-                      <TaskQueue
-                        fields={getTaskFields(item.key)}
-                        name={item.name}
-                        setNumber={item.set || 0}
-                      />
-                    ) : (
-                      <RestQueue
-                        durationSeconds={item.durationSeconds}
-                      />
-                    )}
-                  </div>
-                );
-              })}
-            </div>
+      {queueItems.length > 0 && (
+        <div className={styles.queue}>
+          <div className={styles.queueTitle}>
+            Next up
           </div>
-        )}
-      </div>
+
+          <div className={styles.queueItems}>
+            {queueItems.map((item, index) => {
+              return (
+                <div key={index} className={styles.queueItem}>
+                  {item.type === 'task' ? (
+                    <TaskQueue
+                      fields={getTaskFields(item.key)}
+                      name={item.name}
+                      setNumber={item.set || 0}
+                    />
+                  ) : (
+                    <RestQueue
+                      durationSeconds={item.durationSeconds}
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

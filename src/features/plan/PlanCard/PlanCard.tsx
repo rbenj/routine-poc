@@ -1,4 +1,6 @@
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
+import { GoIcon } from '@/icons/icons';
 import { formatFuzzyDuration } from '@/utils';
 import styles from './PlanCard.module.css';
 
@@ -6,21 +8,26 @@ interface PlanCardProps {
   className?: string;
   estimatedSeconds: number;
   name: string;
+  to: string;
 }
 
 export function PlanCard({
   className,
   estimatedSeconds,
   name,
+  to,
 }: PlanCardProps) {
   return (
-    <div className={classNames(styles.container, className)}>
+    <div className={classNames(styles.planCard, className)}>
       <div className={styles.title}>
-        {name}
+        <Link className={styles.hot} to={to}>
+          {name}
+          <GoIcon className={styles.goIcon} />
+        </Link>
       </div>
 
       <div className={styles.time}>
-        {formatFuzzyDuration(estimatedSeconds)}
+        {formatFuzzyDuration(estimatedSeconds, true)}
       </div>
     </div>
   );

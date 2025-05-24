@@ -1,0 +1,49 @@
+.adjustNumber {
+  color: var(--color-overlay-text);
+  display: flex;
+  flex-direction: column;
+  font-size: var(--fs-3xl);
+  gap: var(--grid-gutter);
+}
+
+.field {
+  background: var(--color-deco-500);
+  border-radius: var(--rad-card);
+  display: flex;
+  flex-direction: column;
+  padding: var(--grid-space-1);
+  width: calc(12 * var(--grid-space-1));
+}
+
+.input {
+  background: none;
+  border-radius: var(--rad-card);
+  border: 1px solid transparent;
+  margin: var(--grid-space-2) 0;
+  padding: var(--grid-space-1) 0;
+  text-align: center;
+}
+
+.input:focus {
+  border-color: var(--color-overlay-text);
+  color: var(--color-overlay-text);
+  outline: none;
+}
+
+.upButton,
+.downButton {
+  align-items: center;
+  background: transparent;
+  border-radius: var(--rad-card-inner);
+  border: var(--outline-width) solid var(--color-outline);
+  display: flex;
+  font-size: 30px;
+  justify-content: center;
+  padding: var(--grid-space-1);
+}
+
+.unit {
+  display: flex;
+  justify-content: center;
+  margin-left: var(--grid-space-1);
+}

@@ -17,32 +17,22 @@ export function TaskQueue({
   setNumber,
 }: TaskQueueProps) {
   return (
-    <div className={classNames(styles.container, className)}>
+    <div className={classNames(styles.taskqueue, className)}>
       <div className={styles.title}>
         {name}
       </div>
 
       {setNumber > 0 && (
-        <div className={styles.setNumber}>
-          {`Set: ${setNumber}`}
+        <div className={styles.set}>
+          {`Set ${setNumber}`}
         </div>
       )}
 
-      <div className={styles.fields}>
-        {fields?.map((field, index) => (
-          <div key={index} className={styles.field}>
-            <div className={styles.fieldKey}>
-              {field.name}
-            </div>
-
-            <div className={styles.fieldValue}>
-              <div className={styles.fieldNumber}>
-                {formatField(field.type, field.value)}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
+      {fields.length > 0 && (
+        <div className={styles.field}>
+          {formatField(fields[0].type, fields[0].value)}
+        </div>
+      )}
     </div>
   );
 }

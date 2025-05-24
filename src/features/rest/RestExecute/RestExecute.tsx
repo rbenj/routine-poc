@@ -1,7 +1,6 @@
 import classNames from 'classnames';
-import { useEffect, useState } from 'react';
-import { useTimer } from '@/hooks';
-import { formatTimer } from '@/utils';
+import { useState } from 'react';
+import { Button, Timer } from '@/components';
 import styles from './RestExecute.module.css';
 
 interface RestExecuteProps {
@@ -15,68 +14,54 @@ export function RestExecute({
   durationSeconds,
   onClickContinue,
 }: RestExecuteProps) {
-  const [isTimerDone, SetIsTimerDone] = useState(false);
-  const [isTimerPaused, setIsTimerPaused] = useState(false);
+  const [isTimerDone, setIsTimerDone] = useState(false);
 
-  const {
-    timerRemainingSeconds,
-    timerIsExhausted,
-    startTimer,
-    pauseTimer,
-    stopTimer,
-  } = useTimer({ totalSeconds: durationSeconds });
+  const randomMessage = (): string => {
+    const messages = [
+      'Stop doing stuff for a spell',
+      'Chill out for a bit',
+      'Relax, you\'ve earned a break',
+    ];
 
-  const handlePause = () => {
-    pauseTimer(!isTimerPaused);
-    setIsTimerPaused(!isTimerPaused);
+    return messages[Math.floor(Math.random() * messages.length)];
   };
 
-  const handleSkip = () => {
-    stopTimer();
-    SetIsTimerDone(true);
+  const handleTimerComplete = () => {
+    setIsTimerDone(true);
   };
 
   const handleContinue = () => {
     onClickContinue();
   };
 
-  useEffect(() => {
-    startTimer();
-  }, [startTimer]);
-
-  useEffect(() => {
-    if (timerIsExhausted) {
-      SetIsTimerDone(true);
-    }
-  }, [timerIsExhausted]);
-
   return (
-    <div className={classNames(styles.container, className)}>
+    <div className={classNames(styles.restExecute, className)}>
       <div className={styles.title}>
         Rest
       </div>
 
-      {!isTimerDone && (
-        <div className={styles.timer}>
-          <div className={styles.timerValue}>
-            {formatTimer(timerRemainingSeconds)}
-          </div>
+      <div className={styles.description}>
+        {randomMessage()}
+      </div>
 
-          <button className={styles.pauseButton} onClick={handlePause}>
-            {isTimerPaused ? 'Resume' : 'Pause'}
-          </button>
+      <div className={styles.timerOuter}>
+        {!isTimerDone && (
+          <Timer
+            autoStart
+            durationSeconds={durationSeconds}
+            onComplete={handleTimerComplete}
+            stopText="Skip"
+          />
+        )}
 
-          <button className={styles.skipButton} onClick={handleSkip}>
-            Skip
-          </button>
-        </div>
-      )}
-
-      {isTimerDone && (
-        <button className={styles.continueButton} onClick={handleContinue}>
-          Continue
-        </button>
-      )}
+        {isTimerDone && (
+          <Button
+            className={styles.continueButton}
+            onClick={handleContinue}
+            text="Continue"
+          />
+        )}
+      </div>
     </div>
   );
 }

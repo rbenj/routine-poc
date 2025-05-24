@@ -1,6 +1,14 @@
-.container {
+.restQueue {
+  align-items: center;
+  background: var(--color-deco-700);
+  border-radius: var(--rad-card);
   display: flex;
+  height: 50px;
   justify-content: space-between;
-  border: 1px solid #000;
-  border-radius: 0.5rem;
+  padding: 0 var(--grid-space-2);
+}
+
+.field {
+  font-weight: bold;
+  margin-left: auto;
 }

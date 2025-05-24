@@ -1,9 +1,11 @@
-.container {
-  display: flex;
-  flex-direction: column;
+.title {
+  font-size: var(--fs-h2);
+  font-weight: bold;
+  line-height: var(--lh-h2);
+  margin-bottom: var(--grid-space-1);
 }
 
-.title {
-  font-weight: bold;
-  font-size: 1.2em;
+.timerOuter {
+  height: 170px;
+  margin-top: var(--grid-space-3);
 }

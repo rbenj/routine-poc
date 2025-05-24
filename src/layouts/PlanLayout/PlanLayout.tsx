@@ -1,15 +1,14 @@
-import { useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { usePlan, usePlanFields } from '@/features/plan';
+import classNames from 'classnames';
+import { useParams } from 'react-router-dom';
+import { PlanHeader, usePlan, usePlanFields } from '@/features/plan';
 import { TaskCard } from '@/features/task';
 import { RestCard } from '@/features/rest';
 import type { Field } from '@/models';
+import { colorClassName } from '@/services';
 import { formatFuzzyDuration } from '@/utils';
 import styles from './PlanLayout.module.css';
 
 export function PlanLayout() {
-  const [itemIndex, setItemIndex] = useState(-1);
-
   const { planName } = useParams();
   const plan = usePlan(planName);
 
@@ -20,54 +19,41 @@ export function PlanLayout() {
   }
 
   let lastTaskName = '';
-  let groupIndex = 0;
+  let colorIndex = 0;
 
   return (
-    <div className={styles.container}>
-      <div className={styles.header}>
-        <Link to="/" className={styles.back}>
-          ←
-        </Link>
-
-        <h2 className={styles.title}>
-          {plan.name}
-        </h2>
-
-        <Link key={plan.name} to={`/plan/${encodeURIComponent(plan.name)}/execute`}>
-          <button className={styles.startButton}>
-            Start
-          </button>
-        </Link>
-
-        <div className={styles.time}>
-          {`About ${formatFuzzyDuration(plan.getEstimatedSeconds())}`}
-        </div>
-      </div>
+    <div className={styles.planLayout}>
+      <PlanHeader
+        backTo="/"
+        className={styles.header}
+        name={plan.name}
+        startTo={`/plan/${encodeURIComponent(plan.name)}/execute`}
+        timeText={`About ${formatFuzzyDuration(plan.getEstimatedSeconds())}`}
+      />
 
       <div className={styles.items}>
         {plan.items.map((item, index) => {
           if (item.type === 'task') {
             if (item.name !== lastTaskName) {
-              groupIndex++;
+              colorIndex++;
             }
 
             lastTaskName = item.name;
 
             return (
               <TaskCard
+                className={classNames(
+                  styles.item,
+                  styles.task,
+                  styles[`set${item.set || 0}`],
+                  colorClassName(colorIndex),
+                )}
                 estimatedSeconds={item.estimatedSeconds}
                 fields={getTaskFields(item.key)}
-                groupNumber={groupIndex % 4 + 1}
-                isEditing={itemIndex === index}
                 key={index}
                 name={item.name}
                 onChangeFieldValue={(field: Field, value: number) => {
                   setTaskFieldValue(item.key, field.key, value);
-                }}
-                onClick={() => {
-                  if (itemIndex !== index) {
-                    setItemIndex(index);
-                  }
                 }}
                 setNumber={item.set || 0}
               />
@@ -75,8 +61,13 @@ export function PlanLayout() {
           } else if (item.type === 'rest') {
             return (
               <RestCard
-                key={index}
+                className={classNames(
+                  styles.item,
+                  styles.rest,
+                  colorClassName(colorIndex),
+                )}
                 durationSeconds={item.durationSeconds}
+                key={index}
               />
             );
           }

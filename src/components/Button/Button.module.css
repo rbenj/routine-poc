@@ -1,6 +1,9 @@
-.container {
-  background: #000;
-  border-radius: 5px;
-  color: #fff;
-  padding: 10px 20px;
+.button {
+  background: var(--color-button-background);
+  border-radius: var(--rad-button);
+  color: var(--color-button-text);
+  font-weight: bold;
+  height: 50px;
+  padding: 0 var(--grid-space-4);
+  text-decoration: none;
 }

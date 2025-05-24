@@ -1,21 +1,49 @@
-.container {
+.planCard {
   display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: var(--card-background);
-  border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
-  padding: 1.5rem;
-  text-decoration: none;
-  color: var(--text-color);
-  transition: transform 0.2s, box-shadow 0.2s;
+  flex-direction: row-reverse;
+  gap: var(--grid-space-1);
+  position: relative;
 }
 
-.container:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+.title,
+.time {
+  align-items: center;
+  border-radius: var(--rad-card);
+  border: var(--outline-width) solid var(--color-outline);
+  display: flex;
+  font-weight: bold;
+  height: calc(9 * var(--grid-space-1));
+  padding: 0 var(--grid-space-2);
 }
 
 .title {
-  font-weight: bold;
+  background-color: var(--color-deco-300);
+  flex: 1;
+}
+
+.hot {
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+.hot::after {
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.goIcon {
+  font-size: 20px;
+  margin-left: auto;
+}
+
+.time {
+  border-color: currentColor;
+  color: var(--color-deco-500);
+  flex: 0 0 var(--grid-span-2);
 }

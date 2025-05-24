@@ -1,20 +1,21 @@
 import classNames from 'classnames';
+import type { ReactNode } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './Button.module.css';
+import styles from './IconButton.module.css';
 
-interface ButtonProps {
+interface IconButtonProps {
   className?: string;
+  icon: ReactNode;
   onClick?: () => void;
-  text: string;
   to?: string;
 }
 
-export function Button({
+export function IconButton({
   className,
+  icon,
   onClick,
-  text,
   to,
-}: ButtonProps) {
+}: IconButtonProps) {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -26,8 +27,8 @@ export function Button({
   };
 
   return (
-    <button className={classNames(styles.button, className)} onClick={handleClick}>
-      {text}
+    <button className={classNames(styles.iconButton, className)} onClick={handleClick}>
+      {icon}
     </button>
   );
 }

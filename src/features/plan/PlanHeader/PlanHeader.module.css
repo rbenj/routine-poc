@@ -1,0 +1,19 @@
+.planHeader {
+  display: flex;
+  padding-bottom: var(--grid-space-2);
+  padding-top: var(--grid-space-5);
+}
+
+.meta {
+  margin-left: var(--grid-space-2);
+}
+
+.title {
+  font-size: var(--fs-h3);
+  font-weight: bold;
+  line-height: var(--lh-h3);
+}
+
+.startButton {
+  margin-left: auto;
+}

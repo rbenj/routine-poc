@@ -2,21 +2,21 @@ export function formatDistance(miles: number, customUnit = ''): string {
   return `${formatNumber(miles, 1)} ${customUnit || 'mi'}`;
 }
 
-export function formatFuzzyDuration(seconds: number): string {
+export function formatFuzzyDuration(seconds: number, abbreviate = false): string {
   const absSeconds = Math.abs(seconds);
   const sign = seconds < 0 ? '-' : '';
 
   if (absSeconds >= 3600) {
-    const hours = Math.floor(absSeconds / 3600);
-    return `${sign}${hours} hr`;
+    const hours = Math.round(absSeconds / 3600);
+    return `${sign}${hours} ${abbreviate ? 'hr' : hours === 1 ? 'hour' : 'hours'}`;
   }
 
   if (absSeconds >= 60) {
-    const minutes = Math.floor(absSeconds / 60);
-    return `${sign}${minutes} min`;
+    const minutes = Math.round(absSeconds / 60);
+    return `${sign}${minutes} ${abbreviate ? 'min' : minutes === 1 ? 'minute' : 'minutes'}`;
   }
 
-  return `${sign}${absSeconds} sec`;
+  return `${sign}${absSeconds} ${abbreviate ? 'sec' : absSeconds === 1 ? 'second' : 'seconds'}`;
 }
 
 export function formatNumber(value: number, decimals: number): string {
@@ -43,5 +43,5 @@ export function formatTimer(seconds: number): string {
 }
 
 export function formatWeight(pounds: number, customUnit = ''): string {
-  return `${formatNumber(pounds, 1)} ${customUnit || 'lbs'}`;
+  return `${formatNumber(pounds, 0)} ${customUnit || 'lbs'}`;
 }

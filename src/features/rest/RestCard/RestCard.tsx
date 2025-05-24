@@ -12,14 +12,8 @@ export function RestCard({
   durationSeconds,
 }: RestCardProps) {
   return (
-    <div className={classNames(styles.container, className)}>
-      <div className={styles.title}>
-        Rest
-      </div>
-
-      <div className={styles.time}>
-        {formatFuzzyDuration(durationSeconds)}
-      </div>
+    <div className={classNames(styles.restCard, className)}>
+      {`Rest for ${formatFuzzyDuration(durationSeconds)}`}
     </div>
   );
 }

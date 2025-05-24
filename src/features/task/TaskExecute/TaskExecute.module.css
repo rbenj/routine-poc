@@ -1,9 +1,74 @@
-.container {
-  display: flex;
-  flex-direction: column;
+.taskExecute {
+  position: relative;
 }
 
 .title {
+  font-size: var(--fs-h2);
   font-weight: bold;
-  font-size: 1.2em;
+  line-height: var(--lh-h2);
+  margin-bottom: var(--grid-space-1);
+}
+
+.fields {
+  display: flex;
+  gap: var(--grid-gutter);
+  margin: var(--grid-space-3) 0;
+}
+
+.field {
+  border-radius: var(--rad-card);
+  border: var(--outline-width) solid var(--color-outline);
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+  height: calc(12 * var(--grid-space-1));
+  justify-content: flex-end;
+  max-width: var(--grid-span-3);
+  padding: var(--grid-space-1);
+  position: relative;
+}
+
+.fieldValue {
+  font-size: var(--fs-h4);
+  font-weight: bold;
+  line-height: var(--lh-h4);
+}
+
+.fieldEdit {
+  bottom: -6px;
+  position: absolute;
+  right: -6px;
+}
+
+.set {
+  align-items: center;
+  background: var(--color-primary);
+  border-radius: var(--rad-circle);
+  color: var(--color-background);
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  right: -5px;
+  top: 87px;
+  width: 50px;
+  z-index: 2;
+}
+
+.setLabel {
+  font-size: var(--fs-xs);
+  line-height: 1;
+}
+
+.setNumber {
+  font-size: var(--fs-lg);
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.timerOuter {
+  height: 170px;
+  margin-top: var(--grid-space-3);
 }

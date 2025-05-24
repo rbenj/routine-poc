@@ -1,0 +1,21 @@
+.overlay {
+  --color-icon-button-text: #fff;
+  --color-icon-button-background: transparent;
+
+  align-items: center;
+  background-color: var(--color-overlay-background);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+}
+
+.closeButton {
+  bottom: var(--grid-space-5);
+  position: absolute;
+}

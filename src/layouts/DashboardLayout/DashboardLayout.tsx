@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { PlanCard, usePlansByDay } from '@/features/plan';
 import { DayOfWeek } from '@/types';
 import styles from './DashboardLayout.module.css';
@@ -6,27 +5,33 @@ import styles from './DashboardLayout.module.css';
 export function DashboardLayout() {
   const plansByDay = usePlansByDay();
 
+  const totalPlans = Array.from(plansByDay.values()).reduce((sum, plans) => sum + plans.length, 0);
+
   return (
-    <div className={styles.container}>
-      <h1>
-        Routine
+    <div className={styles.dashboardLayout}>
+      <h1 className={styles.title}>
+        Welcome Back
       </h1>
+
+      <div className={styles.description}>
+        {`You have ${totalPlans} plan${totalPlans === 1 ? '' : 's'} assigned`}
+      </div>
 
       {Array.from(plansByDay.entries()).map(([day, plans]) => (
         <section key={day} className={styles.day}>
-          <h2 className={styles.dayTitle}>
+          <div className={styles.dayTitle}>
             {DayOfWeek[day]}
-          </h2>
+          </div>
 
           <div className={styles.plans}>
             {plans.map(plan => (
-              <Link key={plan.name} to={`/plan/${encodeURIComponent(plan.name)}`}>
-                <PlanCard
-                  className={styles.plan}
-                  estimatedSeconds={plan.getEstimatedSeconds()}
-                  name={plan.name}
-                />
-              </Link>
+              <PlanCard
+                className={styles.plan}
+                estimatedSeconds={plan.getEstimatedSeconds()}
+                key={plan.name}
+                name={plan.name}
+                to={`/plan/${encodeURIComponent(plan.name)}`}
+              />
             ))}
           </div>
         </section>

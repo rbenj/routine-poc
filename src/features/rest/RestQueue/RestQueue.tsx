@@ -12,13 +12,13 @@ export function RestQueue({
   durationSeconds,
 }: RestQueueProps) {
   return (
-    <div className={classNames(styles.container, className)}>
+    <div className={classNames(styles.restQueue, className)}>
       <div className={styles.title}>
         Rest
       </div>
 
-      <div className={styles.time}>
-        {formatFuzzyDuration(durationSeconds)}
+      <div className={styles.field}>
+        {formatFuzzyDuration(durationSeconds, true)}
       </div>
     </div>
   );

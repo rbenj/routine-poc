@@ -1,5 +1,9 @@
-.container {
-  display: flex;
-  padding: 10px;
-  justify-content: space-between;
+.restCard {
+  border-radius: var(--rad-card);
+  border: var(--outline-width) solid var(--color-deco-500);
+  font-weight: bold;
+  height: calc(6 * var(--grid-space-1));
+  padding-block: var(--grid-gutter);
+  padding-inline: var(--grid-gutter);
+  text-align: center;
 }

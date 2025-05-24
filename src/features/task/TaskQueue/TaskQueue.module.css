@@ -1,6 +1,22 @@
-.container {
+.taskqueue {
+  align-items: center;
+  background-color: var(--color-deco-700);
+  border-radius: var(--rad-card);
   display: flex;
-  justify-content: space-between;
-  border: 1px solid #000;
-  border-radius: 0.5rem;
+  height: 50px;
+  padding: 0 var(--grid-space-2);
+}
+
+.title {
+  margin-right: auto;
+}
+
+.field,
+.set {
+  font-weight: bold;
+}
+
+.field {
+  flex: 0 0 calc(var(--grid-space-1) * 10);
+  text-align: right;
 }

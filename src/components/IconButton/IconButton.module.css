@@ -1,0 +1,12 @@
+.iconButton {
+  align-items: center;
+  background: var(--color-icon-button-background);
+  border-radius: var(--rad-icon-button);
+  border: var(--outline-width) dashed currentColor;
+  color: var(--color-icon-button-text);
+  display: flex;
+  font-size: 19px;
+  height: calc(5 * var(--grid-space-1));
+  justify-content: center;
+  width: calc(5 * var(--grid-space-1));
+}
