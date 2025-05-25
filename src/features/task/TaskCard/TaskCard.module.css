@@ -1,73 +1,46 @@
-.taskCard {
-  position: relative;
-}
-
 .title {
-  font-size: var(--fs-h4);
-  font-weight: bold;
-  line-height: var(--lh-h4);
-  margin-bottom: var(--grid-space-2);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  line-height: var(--lh-h3);
+  margin-bottom: var(--margin-h3-bottom);
 }
 
 .fields {
   display: flex;
   gap: var(--grid-gutter);
-}
-
-.field {
-  background: var(--color-deco-500);
-  border-radius: var(--rad-card);
-  border: var(--outline-width) solid var(--color-outline);
-  display: flex;
-  flex-direction: column-reverse;
-  flex: 1;
-  height: calc(12 * var(--grid-space-1));
-  justify-content: flex-end;
-  padding: var(--grid-space-1);
   position: relative;
 }
 
-.fieldValue {
-  font-size: var(--fs-h5);
-  font-weight: bold;
-  line-height: var(--lh-h5);
+.field {
+  background-color: var(--color-deco-500);
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+  justify-content: flex-end;
+  position: relative;
 }
 
 .field.time {
-  background: var(--color-background);
+  background-color: transparent;
   flex: 0 0 var(--grid-span-2);
 }
 
+.fieldValue {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-h4);
+  line-height: var(--lh-h4);
+}
+
 .fieldEdit {
-  bottom: -6px;
+  bottom: calc(-1 * var(--margin-sm));
   position: absolute;
-  right: -6px;
+  right: calc(-1 * var(--margin-sm));
+  z-index: 1;
 }
 
-.set {
-  align-items: center;
-  background-color: var(--color-deco-700);
-  border-radius: var(--rad-circle);
-  border: var(--outline-width) solid var(--color-outline);
-  bottom: 59px;
-  display: flex;
-  flex-direction: column;
-  height: 50px;
-  justify-content: center;
-  line-height: 1;
+.setBadge {
   position: absolute;
-  right: -5px;
-  width: 50px;
-  z-index: 2;
-}
-
-.setLabel {
-  font-size: var(--fs-xs);
-  line-height: 1;
-}
-
-.setNumber {
-  font-size: var(--fs-lg);
-  font-weight: bold;
-  line-height: 1.1;
+  right: calc(-1 * var(--margin-md));
+  top: calc(-1 * var(--margin-md));
+  z-index: 1;
 }

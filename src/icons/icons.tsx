@@ -1,9 +1,11 @@
 import {
   LuArrowLeft,
   LuMinus,
-  LuPencil,
-  LuPlus,
   LuMoveRight,
+  LuPause,
+  LuPencil,
+  LuPlay,
+  LuPlus,
   LuTimer,
   LuTrophy,
   LuX,
@@ -39,6 +41,14 @@ export function MinusIcon({ className }: IconProps) {
 
 export function TimerIcon({ className }: IconProps) {
   return <LuTimer className={className} color="currentColor" />
+}
+
+export function PauseIcon({ className }: IconProps) {
+  return <LuPause className={className} color="currentColor" />
+}
+
+export function PlayIcon({ className }: IconProps) {
+  return <LuPlay className={className} color="currentColor" />
 }
 
 export function PlusIcon({ className }: IconProps) {

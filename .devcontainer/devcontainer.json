@@ -3,6 +3,10 @@
 {
   "name": "Node.js",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "runArgs": [
+    "-p",
+    "5173:5173"
+  ],
   "forwardPorts": [
     5173
   ],

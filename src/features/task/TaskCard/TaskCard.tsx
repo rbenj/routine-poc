@@ -1,7 +1,8 @@
 import classNames from 'classnames';
-import { FieldEdit } from '@/features/task';
+import { FieldEdit, SetBadge } from '@/features/task';
 import type { Field } from '@/models';
 import { formatField } from '@/services';
+import { cardStyles } from '@/styles';
 import { formatFuzzyDuration } from '@/utils';
 import styles from './TaskCard.module.css';
 
@@ -30,21 +31,14 @@ export function TaskCard({
         </div>
       )}
 
-      {setNumber > 0 && (
-        <div className={styles.set}>
-          <div className={styles.setLabel}>
-            Set
-          </div>
-
-          <div className={styles.setNumber}>
-            {`${setNumber}`}
-          </div>
-        </div>
-      )}
-
       <div className={styles.fields}>
+        <SetBadge
+          className={styles.setBadge}
+          number={setNumber}
+        />
+
         {fields.map((field, index) => (
-          <div key={index} className={styles.field}>
+          <div key={index} className={classNames(styles.field, cardStyles.mediumCard)}>
             <div className={styles.fieldKey}>
               {field.name}
             </div>
@@ -63,7 +57,7 @@ export function TaskCard({
           </div>
         ))}
 
-        <div className={classNames(styles.field, styles.time)}>
+        <div className={classNames(styles.field, cardStyles.mediumCard, styles.time)}>
           <div className={styles.fieldKey}>
             Required
           </div>

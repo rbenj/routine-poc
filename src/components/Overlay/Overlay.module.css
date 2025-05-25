@@ -1,7 +1,4 @@
 .overlay {
-  --color-icon-button-text: #fff;
-  --color-icon-button-background: transparent;
-
   align-items: center;
   background-color: var(--color-overlay-background);
   bottom: 0;
@@ -12,10 +9,14 @@
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 100;
+  z-index: var(--z-overlay);
 }
 
 .closeButton {
-  bottom: var(--grid-space-5);
+  --color-icon-button-text: var(--color-overlay-text);
+  --color-icon-button-background: transparent;
+  --color-icon-button-border: currentColor;
+
+  bottom: var(--padding-screen-bottom);
   position: absolute;
 }

@@ -1,0 +1,23 @@
+.setBadge {
+  align-items: center;
+  background-color: var(--color-deco-500);
+  border-radius: var(--rad-sticker);
+  border: var(--border-width) solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  height: var(--height-sticker);
+  justify-content: center;
+  line-height: 1;
+  width: var(--height-sticker);
+}
+
+.label {
+  font-size: var(--fs-xs);
+  line-height: 1;
+}
+
+.value {
+  font-size: var(--fs-lg);
+  font-weight: bold;
+  line-height: 1.03;
+}

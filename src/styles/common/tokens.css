@@ -1,0 +1,133 @@
+:root {
+  /* Fonts */
+  --font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+  /* Font sizes (minor third scale) */
+  --fs-xs: 0.75rem;   --lh-xs: 1.33;    /* 12px/~16px */
+  --fs-sm: 0.875rem;  --lh-sm: 1.14;    /* 14px/~16px */
+  --fs-md: 1rem;      --lh-md: 1.5;     /* 16px/~24px */
+  --fs-lg: 1.25rem;   --lh-lg: 1.6;     /* 20px/~32px */
+  --fs-xl: 1.5rem;    --lh-xl: 1.33;    /* 24px/~32px */
+  --fs-2xl: 1.75rem;  --lh-2xl: 1.14;   /* 28px/~32px */
+  --fs-3xl: 2rem;     --lh-3xl: 1.25;   /* 32px/~40px */
+  --fs-4xl: 2.5rem;   --lh-4xl: 1.2;    /* 40px/~48px */
+  --fs-5xl: 3rem;     --lh-5xl: 1.17;   /* 48px/~64px */
+  --fs-6xl: 4rem;     --lh-6xl: 1.125;  /* 64px/~72px */
+
+  --fs-body: var(--fs-md);  --lh-body: var(--lh-md);  --fw-body: 400;
+  --fs-h1: var(--fs-4xl);   --lh-h1: var(--lh-4xl);   --fw-h1: 700;
+  --fs-h2: var(--fs-3xl);   --lh-h2: var(--lh-3xl);   --fw-h2: 700;
+  --fs-h3: var(--fs-2xl);   --lh-h3: var(--lh-2xl);   --fw-h3: 700;
+  --fs-h4: var(--fs-xl);    --lh-h4: var(--lh-xl);    --fw-h4: 700;
+
+  /* Layout */
+  --grid-max-width: 900px;
+
+  --grid-base: 8px;
+  --grid-cols: 6;
+
+  --grid-gutter: 8px;
+  --grid-margin: 24px;
+
+  --grid-span-1: calc(100% / (var(--grid-cols) / 1) - var(--grid-gutter) / 2);
+  --grid-span-2: calc(100% / (var(--grid-cols) / 2) - var(--grid-gutter) / 2);
+  --grid-span-3: calc(100% / (var(--grid-cols) / 3) - var(--grid-gutter) / 2);
+  --grid-span-4: calc(100% / (var(--grid-cols) / 4) - var(--grid-gutter) / 2);
+  --grid-span-5: calc(100% / (var(--grid-cols) / 5) - var(--grid-gutter) / 2);
+  --grid-span-6: calc(100% / (var(--grid-cols) / 6) - var(--grid-gutter) / 2);
+
+  --padding-sm: 8px;
+  --padding-md: 16px;
+  --padding-lg: 32px;
+  --padding-xl: 48px;
+
+  --padding-button: var(--padding-lg);
+  --padding-card: var(--padding-sm);
+  --padding-page-bottom: var(--padding-lg);
+  --padding-page-top: var(--padding-lg);
+  --padding-screen-bottom: var(--padding-md);
+  --padding-screen-top: var(--padding-md);
+
+  --margin-sm: 8px;
+  --margin-md: 16px;
+  --margin-lg: 32px;
+  --margin-xl: 48px;
+
+  --margin-card: var(--grid-gutter);
+  --margin-group: var(--margin-md);
+  --margin-h1-bottom: var(--margin-md);
+  --margin-h2-bottom: var(--margin-md);
+  --margin-h3-bottom: var(--margin-md);
+  --margin-h4-bottom: var(--margin-sm);
+  --margin-section: var(--margin-lg);
+
+  --height-bar: calc(2 * var(--grid-base));
+  --height-button: calc(6 * var(--grid-base));
+  --height-icon-button: calc(6 * var(--grid-base));
+  --height-sticker: calc(6 * var(--grid-base));
+
+  --z-overlay: 200;
+  --z-header: 100;
+
+  /* Borders */
+  --border-width: 2px;
+
+  /* Corners */
+  --rad-bar: 9999px;
+  --rad-button: 9999px;
+  --rad-card-inner: 12px;
+  --rad-card-outer: 16px;
+  --rad-icon-button: 50%;
+  --rad-sticker: 50%;
+
+  /* Colors */
+  --color-primary: #2f2f2f;
+  --color-accent: #e9b33b;
+  --color-deco-500: #cea4a5;
+  --color-deco-700: #af888a;
+
+  --color-text: var(--color-primary);
+  --color-background: #f6efe1;
+  --color-border: var(--color-primary);
+  --color-link: var(--color-accent);
+
+  --color-button-text: var(--color-background);
+  --color-button-background: var(--color-primary);
+
+  --color-icon-button-text: var(--color-primary);
+  --color-icon-button-background: var(--color-accent);
+  --color-icon-button-border: var(--color-border);
+
+  --color-overlay-text: #fff;
+  --color-overlay-background: rgba(0, 0, 0, 0.88);
+}
+
+.color3 {
+  --color-deco-500: #b8a4ce;
+  --color-deco-700: #9a88af;
+}
+
+.color4 {
+  --color-deco-500: #a4cecd;
+  --color-deco-700: #88afad;
+}
+
+.color1 {
+  --color-deco-500: #cea4a5;
+  --color-deco-700: #af888a;
+}
+
+.color2 {
+  --color-deco-500: #bacea4;
+  --color-deco-700: #9eaf88;
+}
+
+@media (max-width: 414px) {
+  :root {
+    --fs-body: var(--fs-sm);  --lh-body: var(--lh-sm);
+    --fs-h1: var(--fs-3xl);   --lh-h1: var(--lh-3xl);
+    --fs-h2: var(--fs-2xl);   --lh-h2: var(--lh-2xl);
+    --fs-h3: var(--fs-xl);    --lh-h3: var(--lh-xl);
+    --fs-h4: var(--fs-lg);    --lh-h4: var(--lh-lg);
+  }
+}

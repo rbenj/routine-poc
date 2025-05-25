@@ -12,7 +12,6 @@ body {
   font-family: var(--font-family);
   font-size: var(--fs-body);
   line-height: inherit;
-  min-height: 100vh;
 }
 
 *,
@@ -40,4 +39,8 @@ h4,
 h5,
 h6 {
   margin: 0;
+}
+
+button {
+  border: none;
 }

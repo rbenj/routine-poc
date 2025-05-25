@@ -4,67 +4,76 @@
   --color-icon-button-background: var(--color-deco-500);
 
   background-color: var(--color-background);
+  bottom: 0;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  padding-bottom: var(--grid-space-4);
+  left: 0;
+  margin-inline: auto;
+  max-width: var(--grid-max-width);
+  overflow: hidden;
   padding-inline: var(--grid-margin);
+  position: fixed;
+  right: 0;
+  top: 0;
 }
 
 .header {
-  margin-inline: calc(0px - var(--grid-margin));
-  padding-inline: var(--grid-margin);
+  border: none;
 }
 
 .progressBar {
   background-color: var(--color-deco-700);
-  border-radius: var(--rad-pill);
-  height: 14px;
-  margin-bottom: calc(10 * var(--grid-space-1));
+  border-radius: var(--rad-bar);
+  height: var(--height-bar);
+  margin-bottom: var(--margin-section);
   overflow: hidden;
 }
 
 .progressBarInner {
   background-color: var(--color-primary);
-  border-radius: var(--rad-pill);
+  border-radius: var(--rad-bar);
   height: 100%;
   transition: width 0.3s ease;
-}
-
-.queue {
-  grid-column: 1 / -1;
-  margin-top: auto;
-}
-
-.queueTitle {
-  font-size: var(--font-size-large);
-  font-weight: bold;
-  line-height: var(--lh-large);
-}
-
-.queueItems {
-  display: flex;
-  flex-direction: column;
-  gap: var(--grid-space-1);
-  margin-top: var(--grid-space-2);
 }
 
 .complete {
   align-items: center;
   display: flex;
   flex-direction: column;
-  margin-top: calc(10 * var(--grid-space-1));
+  justify-content: center;
 }
 
 .completeIcon {
   font-size: 90px;
+  margin-bottom: var(--margin-sm);
 }
 
 .completeTitle {
-  font-size: var(--fs-h2);
-  margin-top: var(--grid-space-2);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+  line-height: var(--lh-h1);
+  margin-bottom: var(--margin-h1-bottom);
 }
 
-.completeButton {
-  margin-top: var(--grid-space-4);
+.queue {
+  bottom: var(--padding-screen-bottom);
+  left: 0;
+  margin-inline: auto;
+  max-width: var(--grid-max-width);
+  padding-inline: var(--grid-margin);
+  position: fixed;
+  right: 0;
+}
+
+.queueTitle {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-h4);
+  line-height: var(--lh-h4);
+  margin-bottom: var(--margin-h4-bottom);
+}
+
+.queueItems {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-card);
 }

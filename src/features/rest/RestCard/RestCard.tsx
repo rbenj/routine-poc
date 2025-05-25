@@ -1,4 +1,5 @@
 import classNames from 'classnames';
+import { cardStyles } from '@/styles';
 import { formatFuzzyDuration } from '@/utils';
 import styles from './RestCard.module.css';
 
@@ -12,7 +13,7 @@ export function RestCard({
   durationSeconds,
 }: RestCardProps) {
   return (
-    <div className={classNames(styles.restCard, className)}>
+    <div className={classNames(styles.restCard, cardStyles.smallCard, className)}>
       {`Rest for ${formatFuzzyDuration(durationSeconds)}`}
     </div>
   );

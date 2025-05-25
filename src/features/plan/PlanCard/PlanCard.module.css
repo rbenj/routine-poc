@@ -1,23 +1,19 @@
 .planCard {
   display: flex;
   flex-direction: row-reverse;
-  gap: var(--grid-space-1);
+  gap: var(--grid-gutter);
   position: relative;
 }
 
 .title,
 .time {
   align-items: center;
-  border-radius: var(--rad-card);
-  border: var(--outline-width) solid var(--color-outline);
   display: flex;
   font-weight: bold;
-  height: calc(9 * var(--grid-space-1));
-  padding: 0 var(--grid-space-2);
 }
 
 .title {
-  background-color: var(--color-deco-300);
+  background-color: var(--color-deco-500);
   flex: 1;
 }
 

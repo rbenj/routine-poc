@@ -2,40 +2,34 @@
   column-gap: var(--grid-gutter);
   display: grid;
   grid-template-columns: repeat(var(--grid-cols), 1fr);
-  padding-inline: var(--grid-margin);
+  margin-inline: auto;
+  max-width: var(--grid-max-width);
+  padding: 0 var(--grid-margin) var(--padding-page-bottom);
 }
 
 .header {
-  background-color: var(--color-background);
-  border-bottom: var(--outline-width) solid var(--color-outline);
-  border-radius: var(--rad-header);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-top: none;
-  box-shadow: -2.5px -1px 1px 0 var(--color-outline), 2.5px -1px 1px 0px var(--color-outline);
   grid-column: 1 / -1;
   margin-inline: calc(0px - var(--grid-margin));
-  overflow: hidden;
   padding-inline: var(--grid-margin);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: var(--z-header);
 }
 
 .items {
   grid-column: 1 / -1;
-  padding-block: var(--grid-space-4) var(--grid-space-6);
+  margin-top: var(--padding-page-top);
 }
 
 .item {
-  margin-bottom: var(--grid-space-1);
+  margin-bottom: var(--margin-card);
 }
 
 .item.rest {
-  margin-bottom: var(--grid-space-2);
+  margin-bottom: var(--margin-group);
 }
 
 .item.set0:not(:first-child),
 .item.set1:not(:first-child) {
-  margin-top: var(--grid-space-5);
+  margin-top: var(--margin-section);
 }

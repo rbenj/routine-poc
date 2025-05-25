@@ -4,23 +4,24 @@
   flex-direction: column;
   font-size: var(--fs-3xl);
   gap: var(--grid-gutter);
+  width: 120px;
 }
 
 .field {
-  background: var(--color-deco-500);
-  border-radius: var(--rad-card);
+  background-color: var(--color-deco-500);
+  border-radius: var(--rad-card-outer);
+  color: var(--color-text);
   display: flex;
   flex-direction: column;
-  padding: var(--grid-space-1);
-  width: calc(12 * var(--grid-space-1));
+  padding: var(--padding-md);
 }
 
 .input {
-  background: none;
-  border-radius: var(--rad-card);
-  border: 1px solid transparent;
-  margin: var(--grid-space-2) 0;
-  padding: var(--grid-space-1) 0;
+  background-color: transparent;
+  border-radius: var(--rad-card-inner);
+  border: var(--border-width) solid transparent;
+  margin: var(--margin-sm) 0;
+  padding: var(--padding-card) 0;
   text-align: center;
 }
 
@@ -33,17 +34,16 @@
 .upButton,
 .downButton {
   align-items: center;
-  background: transparent;
+  background-color: transparent;
   border-radius: var(--rad-card-inner);
-  border: var(--outline-width) solid var(--color-outline);
+  border: var(--border-width) solid var(--color-border);
+  color: var(--color-text);
   display: flex;
-  font-size: 30px;
+  font-size: 27px;
+  height: var(--height-button);
   justify-content: center;
-  padding: var(--grid-space-1);
 }
 
 .unit {
-  display: flex;
-  justify-content: center;
-  margin-left: var(--grid-space-1);
+  text-align: center;
 }

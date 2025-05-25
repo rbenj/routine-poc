@@ -1,35 +1,31 @@
 .dashboardLayout {
-  padding: var(--grid-space-4) var(--grid-margin) var(--grid-space-6);
+  margin-inline: auto;
+  max-width: var(--grid-max-width);
+  padding: var(--padding-page-top) var(--grid-margin) var(--padding-page-bottom);
 }
 
 .title {
-  font-size: var(--fs-h2);
-  font-weight: bold;
-  line-height: var(--lh-h2);
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+  line-height: var(--lh-h1);
+  margin-bottom: var(--margin-h1-bottom);
 }
 
 .day {
-  margin-top: var(--grid-space-4);
+  margin-top: var(--margin-section);
 }
 
 .dayTitle {
   align-items: center;
-  border-radius: var(--rad-card);
-  border: var(--outline-width) solid currentColor;
+  border-color: currentColor;
   color: var(--color-deco-500);
   display: flex;
   font-weight: bold;
-  height: 50px;
-  margin: var(--grid-space-1) 0;
-  padding: 0 var(--grid-space-2);
+  margin-block: var(--margin-card);
 }
 
 .plans {
   display: flex;
   flex-direction: column;
   gap: var(--grid-gutter);
-}
-
-.plan {
-  flex: 1;
 }

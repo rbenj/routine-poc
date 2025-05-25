@@ -1,9 +1,7 @@
 .restCard {
-  border-radius: var(--rad-card);
-  border: var(--outline-width) solid var(--color-deco-500);
+  align-items: center;
+  border-color: var(--color-deco-500);
+  display: flex;
   font-weight: bold;
-  height: calc(6 * var(--grid-space-1));
-  padding-block: var(--grid-gutter);
-  padding-inline: var(--grid-gutter);
-  text-align: center;
+  justify-content: center;
 }

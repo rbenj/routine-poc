@@ -1,4 +1,6 @@
+import classNames from 'classnames';
 import { PlanCard, usePlansByDay } from '@/features/plan';
+import { cardStyles } from '@/styles';
 import { DayOfWeek } from '@/types';
 import styles from './DashboardLayout.module.css';
 
@@ -19,7 +21,7 @@ export function DashboardLayout() {
 
       {Array.from(plansByDay.entries()).map(([day, plans]) => (
         <section key={day} className={styles.day}>
-          <div className={styles.dayTitle}>
+          <div className={classNames(styles.dayTitle, cardStyles.smallCard)}>
             {DayOfWeek[day]}
           </div>
 

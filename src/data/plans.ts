@@ -148,7 +148,7 @@ const data: PlanData[] = [
         key: '503e0cf9',
         name: 'Hammer Curl',
         set: 1,
-        estimatedSeconds: 120,
+        estimatedSeconds: 180,
         fields: [
           {
             name: 'Weight',
@@ -177,7 +177,7 @@ const data: PlanData[] = [
         key: 'dd3949a2',
         name: 'Hammer Curl',
         set: 2,
-        estimatedSeconds: 120,
+        estimatedSeconds: 180,
         fields: [
           {
             name: 'Weight',
@@ -206,7 +206,7 @@ const data: PlanData[] = [
         key: '4b486d57',
         name: 'Hammer Curl',
         set: 3,
-        estimatedSeconds: 120,
+        estimatedSeconds: 180,
         fields: [
           {
             name: 'Weight',
@@ -813,7 +813,7 @@ const data: PlanData[] = [
         key: 'fcf558c5',
         name: 'Pushups',
         set: 1,
-        estimatedSeconds: 120,
+        estimatedSeconds: 180,
         fields: [
           {
             name: 'Reps',
@@ -1019,7 +1019,7 @@ const data: PlanData[] = [
         key: 'ea693419',
         name: 'DB Reverse Lunge',
         set: 1,
-        estimatedSeconds: 120,
+        estimatedSeconds: 180,
         fields: [
           {
             name: 'Weight',
@@ -1048,7 +1048,7 @@ const data: PlanData[] = [
         key: '6efc8b43',
         name: 'DB Reverse Lunge',
         set: 2,
-        estimatedSeconds: 120,
+        estimatedSeconds: 180,
         fields: [
           {
             name: 'Weight',
@@ -1077,7 +1077,7 @@ const data: PlanData[] = [
         key: '9db64f1d',
         name: 'DB Reverse Lunge',
         set: 3,
-        estimatedSeconds: 120,
+        estimatedSeconds: 180,
         fields: [
           {
             name: 'Weight',

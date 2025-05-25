@@ -1,6 +1,7 @@
 import classNames from 'classnames';
 import { useEffect, useState } from 'react';
-import { Button } from '@/components';
+import { Button, IconButton } from '@/components';
+import { CloseIcon, PauseIcon, PlayIcon } from '@/icons';
 import { useTimer } from '@/hooks';
 import { formatTimer } from '@/utils';
 import styles from './Timer.module.css';
@@ -10,7 +11,6 @@ interface TimerProps {
   className?: string;
   durationSeconds: number;
   onComplete: () => void;
-  stopText?: string;
 }
 
 export function Timer({
@@ -18,7 +18,6 @@ export function Timer({
   className,
   durationSeconds,
   onComplete,
-  stopText = 'Stop',
 }: TimerProps) {
   const [isTimerDone, setIsTimerDone] = useState(false);
   const [isTimerPaused, setIsTimerPaused] = useState(false);
@@ -58,11 +57,13 @@ export function Timer({
 
   if (!timerIsStarted && !autoStart) {
     return (
-      <Button
-        className={styles.startButton}
-        onClick={startTimer}
-        text="Start"
-      />
+      <div className={classNames(styles.timer, className)}>
+        <Button
+          className={styles.startButton}
+          onClick={startTimer}
+          text="Start"
+        />
+      </div>
     );
   }
 
@@ -72,21 +73,21 @@ export function Timer({
 
   return (
     <div className={classNames(styles.timer, className)}>
-      <div className={styles.timerValue}>
+      <div className={styles.value}>
         {formatTimer(timerRemainingSeconds)}
       </div>
 
-      <div className={styles.timerButtons}>
-        <Button
+      <div className={styles.buttons}>
+        <IconButton
           className={styles.pauseButton}
+          icon={isTimerPaused ? <PlayIcon /> : <PauseIcon />}
           onClick={handlePause}
-          text={isTimerPaused ? 'Resume' : 'Pause'}
         />
 
-        <Button
+        <IconButton
           className={styles.stopButton}
+          icon={<CloseIcon />}
           onClick={handleStop}
-          text={stopText}
         />
       </div>
     </div>

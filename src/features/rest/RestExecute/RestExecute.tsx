@@ -1,6 +1,5 @@
 import classNames from 'classnames';
-import { useState } from 'react';
-import { Button, Timer } from '@/components';
+import { Timer } from '@/components';
 import styles from './RestExecute.module.css';
 
 interface RestExecuteProps {
@@ -14,8 +13,6 @@ export function RestExecute({
   durationSeconds,
   onClickContinue,
 }: RestExecuteProps) {
-  const [isTimerDone, setIsTimerDone] = useState(false);
-
   const randomMessage = (): string => {
     const messages = [
       'Stop doing stuff for a spell',
@@ -27,10 +24,6 @@ export function RestExecute({
   };
 
   const handleTimerComplete = () => {
-    setIsTimerDone(true);
-  };
-
-  const handleContinue = () => {
     onClickContinue();
   };
 
@@ -44,24 +37,12 @@ export function RestExecute({
         {randomMessage()}
       </div>
 
-      <div className={styles.timerOuter}>
-        {!isTimerDone && (
-          <Timer
-            autoStart
-            durationSeconds={durationSeconds}
-            onComplete={handleTimerComplete}
-            stopText="Skip"
-          />
-        )}
-
-        {isTimerDone && (
-          <Button
-            className={styles.continueButton}
-            onClick={handleContinue}
-            text="Continue"
-          />
-        )}
-      </div>
+      <Timer
+        autoStart
+        className={styles.timer}
+        durationSeconds={durationSeconds}
+        onComplete={handleTimerComplete}
+      />
     </div>
   );
 }

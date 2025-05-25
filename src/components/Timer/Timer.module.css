@@ -1,10 +1,15 @@
-.timerValue {
-  font-size: calc(var(--grid-space-1) * 10);
-  line-height: 1;
-  margin-bottom: var(--grid-space-3);
+.timer {
+  align-items: center;
+  display: flex;
 }
 
-.timerButtons {
+.value {
+  font-size: var(--fs-6xl);
+  line-height: var(--lh-6xl);
+  margin-right: var(--margin-md);
+}
+
+.buttons {
   display: flex;
   gap: var(--grid-gutter);
 }

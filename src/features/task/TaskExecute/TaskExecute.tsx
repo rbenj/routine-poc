@@ -1,9 +1,10 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 import { Button, Timer } from '@/components';
-import { FieldEdit } from '@/features/task';
+import { FieldEdit, SetBadge } from '@/features/task';
 import type { Field } from '@/models';
 import { formatField } from '@/services';
+import { cardStyles } from '@/styles';
 import { formatFuzzyDuration } from '@/utils';
 import styles from './TaskExecute.module.css';
 
@@ -50,21 +51,14 @@ export function TaskExecute({
         </div>
       )}
 
-      {setNumber > 0 && (
-        <div className={styles.set}>
-          <div className={styles.setLabel}>
-            Set
-          </div>
-
-          <div className={styles.setNumber}>
-            {`${setNumber}`}
-          </div>
-        </div>
-      )}
-
       <div className={styles.fields}>
+        <SetBadge
+          className={styles.setBadge}
+          number={setNumber}
+        />
+
         {fields?.map((field, index) => (
-          <div key={index} className={styles.field}>
+          <div key={index} className={classNames(styles.field, cardStyles.mediumCard)}>
             <div className={styles.fieldKey}>
               {field.name}
             </div>
@@ -84,23 +78,21 @@ export function TaskExecute({
         ))}
       </div>
 
-      <div className={styles.timerOuter}>
-        {timerDurationSeconds > 0 && !isTimerDone && (
-          <Timer
-            className={styles.timer}
-            durationSeconds={timerDurationSeconds}
-            onComplete={handleTimerComplete}
-          />
-        )}
+      {timerDurationSeconds > 0 && !isTimerDone && (
+        <Timer
+          className={styles.timer}
+          durationSeconds={timerDurationSeconds}
+          onComplete={handleTimerComplete}
+        />
+      )}
 
-        {(!timerDurationSeconds || isTimerDone) && (
-          <Button
-            className={styles.continueButton}
-            onClick={handleContinue}
-            text="Continue"
-          />
-        )}
-      </div>
+      {(!timerDurationSeconds || isTimerDone) && (
+        <Button
+          className={styles.continueButton}
+          onClick={handleContinue}
+          text="Continue"
+        />
+      )}
     </div>
   );
 }

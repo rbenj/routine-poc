@@ -1,11 +1,20 @@
-.title {
-  font-size: var(--fs-h2);
-  font-weight: bold;
-  line-height: var(--lh-h2);
-  margin-bottom: var(--grid-space-1);
+.restExecute {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.timerOuter {
-  height: 170px;
-  margin-top: var(--grid-space-3);
+.title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+  line-height: var(--lh-h1);
+  text-align: center;
+}
+
+.description {
+  margin-top: var(--margin-sm);
+}
+
+.timer {
+  margin-top: var(--margin-sm);
 }

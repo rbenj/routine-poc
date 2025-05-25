@@ -1,0 +1,11 @@
+.smallCard {
+  border-radius: var(--rad-card-outer);
+  border: var(--border-width) solid var(--color-border);
+  padding: calc(var(--padding-md) - var(--border-width)) var(--padding-card);
+}
+
+.mediumCard {
+  border-radius: var(--rad-card-outer);
+  border: var(--border-width) solid var(--color-border);
+  padding: calc(var(--padding-card) - var(--border-width)) var(--padding-card) calc(var(--height-icon-button) - var(--padding-sm) - var(--border-width));
+}

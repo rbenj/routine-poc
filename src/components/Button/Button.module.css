@@ -1,9 +1,9 @@
 .button {
-  background: var(--color-button-background);
+  background-color: var(--color-button-background);
   border-radius: var(--rad-button);
   color: var(--color-button-text);
   font-weight: bold;
-  height: 50px;
-  padding: 0 var(--grid-space-4);
+  height: var(--height-button);
+  padding-inline: var(--padding-button);
   text-decoration: none;
 }

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { Button } from '@/components';
 import { PlanHeader, usePlan, usePlanFields } from '@/features/plan';
@@ -13,6 +13,25 @@ export function ExecuteLayout() {
   const [itemIndex, setItemIndex] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
 
+  useEffect(() => {
+    const metaEl = document.querySelector('meta[name="theme-color"]');
+
+    if (!metaEl) {
+      return;
+    }
+
+    const originalThemeColor = metaEl.getAttribute('content');
+    metaEl.setAttribute('content', '#cea4a5');
+    document.body.style.backgroundColor = '#cea4a5';
+
+    return () => {
+      if (metaEl && originalThemeColor) {
+        metaEl.setAttribute('content', originalThemeColor);
+        document.body.style.backgroundColor = originalThemeColor;
+      }
+    };
+  }, []);
+
   const { planName } = useParams();
   const plan = usePlan(planName);
 
@@ -24,6 +43,8 @@ export function ExecuteLayout() {
 
   const estimatedSeconds = plan.getEstimatedSeconds();
   const remainingEstimatedSeconds = plan.getRemainingSeconds(itemIndex);
+
+  const progressPercent = isComplete ? 100 : (estimatedSeconds - remainingEstimatedSeconds) / estimatedSeconds * 100;
 
   const item = plan.items[itemIndex];
 
@@ -49,7 +70,7 @@ export function ExecuteLayout() {
       <div className={styles.progressBar}>
         <div
           className={styles.progressBarInner}
-          style={{ width: `${(estimatedSeconds - remainingEstimatedSeconds) / estimatedSeconds * 100}%` }}
+          style={{ width: `${progressPercent}%` }}
         />
       </div>
 

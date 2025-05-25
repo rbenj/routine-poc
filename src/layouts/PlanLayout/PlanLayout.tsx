@@ -19,7 +19,7 @@ export function PlanLayout() {
   }
 
   let lastTaskName = '';
-  let colorIndex = 0;
+  let colorIndex = -1;
 
   return (
     <div className={styles.planLayout}>
