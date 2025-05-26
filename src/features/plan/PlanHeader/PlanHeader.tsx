@@ -21,6 +21,7 @@ export function PlanHeader({
   return (
     <div className={classNames(styles.planHeader, className)}>
       <IconButton
+        aria-label="Back"
         icon={<BackIcon />}
         to={backTo}
       />

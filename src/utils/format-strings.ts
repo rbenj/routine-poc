@@ -31,8 +31,8 @@ export function formatMinutes(seconds: number, customUnit = ''): string {
 export function formatSlug(value: string): string {
   return value
     .toLowerCase()
-    .replace(/ /g, '-')
-    .replace(/[^a-z0-9-]/g, '');
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 }
 
 export function formatTimer(seconds: number): string {

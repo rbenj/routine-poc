@@ -15,12 +15,14 @@ function getStorage(session?: boolean): Storage | Record<string, unknown> {
   }
 
   try {
-    return session ? window.sessionStorage : window.localStorage;
+    const storage = session ? window.sessionStorage : window.localStorage;
+    storage.getItem('test'); // force an error if storage is off limits
+    return storage;
   } catch (error) {
     console.warn('Storage is not available.', error); // eslint-disable-line no-console
     return session ? fallbackSessionStorage : fallbackLocalStorage;
   }
-};
+}
 
 // TODO: Expand on this to handle object shapes.
 function isTypeValid<T>(value: unknown, defaultValue: T): boolean {
@@ -82,7 +84,7 @@ export const robustStorage: RobustStorage = {
       if (storage instanceof Storage) {
         storage.setItem(key, JSON.stringify(value));
       } else {
-        storage[key] = value;
+        storage[key] = JSON.stringify(value);
       }
     } catch (error) {
       console.warn('Failed to set item.', error); // eslint-disable-line no-console

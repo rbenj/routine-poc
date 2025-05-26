@@ -20,11 +20,19 @@ export function AdjustNumber({
   value,
 }: AdjustNumberProps) {
   const handleIncrement = () => {
-    onChange(value + 1);
+    if (typeof max === 'number' && value >= max) {
+      onChange(max);
+    } else {
+      onChange(value + 1);
+    }
   };
 
   const handleDecrement = () => {
-    onChange(value - 1);
+    if (typeof min === 'number' && value <= min) {
+      onChange(min);
+    } else {
+      onChange(value - 1);
+    }
   };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {

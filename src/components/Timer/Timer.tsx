@@ -79,12 +79,14 @@ export function Timer({
 
       <div className={styles.buttons}>
         <IconButton
+          aria-label={isTimerPaused ? 'Resume timer' : 'Pause timer'}
           className={styles.pauseButton}
           icon={isTimerPaused ? <PlayIcon /> : <PauseIcon />}
           onClick={handlePause}
         />
 
         <IconButton
+          aria-label="Stop timer"
           className={styles.stopButton}
           icon={<CloseIcon />}
           onClick={handleStop}

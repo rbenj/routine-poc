@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './IconButton.module.css';
 
 interface IconButtonProps {
+  'aria-label'?: string;
   className?: string;
   icon: ReactNode;
   onClick?: () => void;
@@ -11,6 +12,7 @@ interface IconButtonProps {
 }
 
 export function IconButton({
+  'aria-label': ariaLabel,
   className,
   icon,
   onClick,
@@ -27,7 +29,11 @@ export function IconButton({
   };
 
   return (
-    <button className={classNames(styles.iconButton, className)} onClick={handleClick}>
+    <button
+      aria-label={ariaLabel}
+      className={classNames(styles.iconButton, className)}
+      onClick={handleClick}
+    >
       {icon}
     </button>
   );
