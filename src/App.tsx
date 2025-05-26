@@ -1,12 +1,10 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from '@/routes';
 
 export function App() {
   return (
-    <Router>
-      <>
-        <AppRoutes />
-      </>
-    </Router>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <AppRoutes />
+    </BrowserRouter>
   );
 }
