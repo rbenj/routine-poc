@@ -50,4 +50,44 @@ describe('usePlansByDay', () => {
     const plansByDay = result.current;
     expect(plansByDay.size).toBe(0);
   });
+
+  it('returns days in chronological order', () => {
+    const mockPlansWithMixedDays = [
+      new Plan({
+        name: 'Friday Plan',
+        items: [],
+        assignment: [{ dayOfWeek: DayOfWeek.Friday, order: 1 }],
+      }),
+      new Plan({
+        name: 'Monday Plan',
+        items: [],
+        assignment: [{ dayOfWeek: DayOfWeek.Monday, order: 1 }],
+      }),
+      new Plan({
+        name: 'Wednesday Plan',
+        items: [],
+        assignment: [{ dayOfWeek: DayOfWeek.Wednesday, order: 1 }],
+      }),
+      new Plan({
+        name: 'Sunday Plan',
+        items: [],
+        assignment: [{ dayOfWeek: DayOfWeek.Sunday, order: 1 }],
+      }),
+    ];
+
+    vi.mocked(usePlans).mockReturnValue(mockPlansWithMixedDays);
+
+    const { result } = renderHook(() => usePlansByDay());
+
+    const plansByDay = result.current;
+    const dayKeys = Array.from(plansByDay.keys());
+
+    // Should be in order: Monday (0), Wednesday (2), Friday (4), Sunday (6)
+    expect(dayKeys).toEqual([
+      DayOfWeek.Monday,
+      DayOfWeek.Wednesday,
+      DayOfWeek.Friday,
+      DayOfWeek.Sunday,
+    ]);
+  });
 });

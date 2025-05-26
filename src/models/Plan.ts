@@ -1,4 +1,5 @@
 import type { DayOfWeek } from '@/types';
+import { formatSlug } from '@/utils';
 import type { RestData } from './Rest';
 import { Rest } from './Rest';
 import type { TaskData } from './Task';
@@ -19,11 +20,13 @@ export class Plan {
   assignment: PlanAssignment[];
   items: (Task | Rest)[];
   name: string;
+  slug: string;
 
   constructor(raw: PlanData) {
     this.assignment = raw.assignment;
     this.items = raw.items.map(v => v.type === 'task' ? new Task(v) : new Rest(v));
     this.name = raw.name;
+    this.slug = formatSlug(raw.name);
   }
 
   getEstimatedSeconds(): number {

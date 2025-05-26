@@ -32,7 +32,7 @@ export function DashboardLayout() {
                 estimatedSeconds={plan.getEstimatedSeconds()}
                 key={plan.name}
                 name={plan.name}
-                to={`/plan/${encodeURIComponent(plan.name)}`}
+                to={`/plan/${plan.slug}`}
               />
             ))}
           </div>

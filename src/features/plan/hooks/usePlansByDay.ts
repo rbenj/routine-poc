@@ -17,6 +17,17 @@ export function usePlansByDay(): Map<DayOfWeek, Plan[]> {
       });
     });
 
-    return map;
+    const orderedMap = new Map<DayOfWeek, Plan[]>();
+
+    Object.values(DayOfWeek)
+      .filter(day => typeof day === 'number')
+      .forEach((day) => {
+        const dayPlans = map.get(day as DayOfWeek);
+        if (dayPlans && dayPlans.length > 0) {
+          orderedMap.set(day as DayOfWeek, dayPlans);
+        }
+      });
+
+    return orderedMap;
   }, [plans]);
 }

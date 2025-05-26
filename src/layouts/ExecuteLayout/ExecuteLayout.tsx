@@ -32,8 +32,8 @@ export function ExecuteLayout() {
     };
   }, []);
 
-  const { planName } = useParams();
-  const plan = usePlan(planName);
+  const { planSlug } = useParams();
+  const plan = usePlan(planSlug);
 
   const { getTaskFields, setTaskFieldValue } = usePlanFields(plan);
 
@@ -61,7 +61,7 @@ export function ExecuteLayout() {
   return (
     <div className={styles.executeLayout}>
       <PlanHeader
-        backTo={`/plan/${encodeURIComponent(plan.name)}`}
+        backTo={`/plan/${plan.slug}`}
         className={styles.header}
         name={plan.name}
         timeText={`About ${formatFuzzyDuration(remainingEstimatedSeconds)} left`}

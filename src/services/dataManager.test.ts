@@ -20,7 +20,7 @@ vi.mock('@/data/plans', () => ({
       ],
     },
     {
-      name: 'plan2',
+      name: 'Plan With Spaces & Special!',
       assignment: [
         { dayOfWeek: 'tuesday', order: 1 },
       ],
@@ -43,18 +43,26 @@ describe('dataManager', () => {
       expect(plans[0]).toBeInstanceOf(Plan);
       expect(plans[1]).toBeInstanceOf(Plan);
       expect(plans[0].name).toBe('plan1');
-      expect(plans[1].name).toBe('plan2');
+      expect(plans[1].name).toBe('Plan With Spaces & Special!');
     });
   });
 
   describe('getPlan', () => {
-    it('returns plan by name', () => {
+    it('returns plan by slug', () => {
       const plan = dataManager.getPlan('plan1');
       expect(plan).toBeInstanceOf(Plan);
       expect(plan?.name).toBe('plan1');
+      expect(plan?.slug).toBe('plan1');
     });
 
-    it('returns undefined for non-existent plan', () => {
+    it('returns plan by slug with special characters', () => {
+      const plan = dataManager.getPlan('plan-with-spaces-special');
+      expect(plan).toBeInstanceOf(Plan);
+      expect(plan?.name).toBe('Plan With Spaces & Special!');
+      expect(plan?.slug).toBe('plan-with-spaces-special');
+    });
+
+    it('returns undefined for non-existent slug', () => {
       const plan = dataManager.getPlan('non-existent');
       expect(plan).toBeUndefined();
     });

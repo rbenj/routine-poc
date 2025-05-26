@@ -8,7 +8,7 @@ export const dataManager = {
     return data;
   },
 
-  getPlan(name: string): Plan | undefined {
-    return data.find(v => v.name === name);
+  getPlan(slug: string): Plan | undefined {
+    return data.find(v => v.slug === slug);
   },
 };

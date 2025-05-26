@@ -9,8 +9,8 @@ import { formatFuzzyDuration } from '@/utils';
 import styles from './PlanLayout.module.css';
 
 export function PlanLayout() {
-  const { planName } = useParams();
-  const plan = usePlan(planName);
+  const { planSlug } = useParams();
+  const plan = usePlan(planSlug);
 
   const { getTaskFields, setTaskFieldValue } = usePlanFields(plan);
 
@@ -27,7 +27,7 @@ export function PlanLayout() {
         backTo="/"
         className={styles.header}
         name={plan.name}
-        startTo={`/plan/${encodeURIComponent(plan.name)}/execute`}
+        startTo={`/plan/${plan.slug}/execute`}
         timeText={`About ${formatFuzzyDuration(plan.getEstimatedSeconds())}`}
       />
 

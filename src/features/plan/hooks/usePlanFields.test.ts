@@ -12,6 +12,7 @@ vi.mock('@/utils', () => ({
     getItem: vi.fn(),
     setItem: vi.fn(),
   },
+  formatSlug: vi.fn((value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')),
 }));
 
 describe('usePlanFields', () => {
