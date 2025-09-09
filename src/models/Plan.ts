@@ -42,4 +42,10 @@ export class Plan {
   getItems(index: number, limit: number): (TaskData | RestData)[] {
     return this.items.slice(index, index + limit);
   }
+
+  getQueueItems(index: number, limit: number): TaskData[] {
+    const remainingItems = this.items.slice(index);
+    const taskItems = remainingItems.filter(item => item.type === 'task');
+    return taskItems.slice(0, limit).map(item => item as TaskData);
+  }
 }

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { Button } from '@/components';
 import { PlanHeader, usePlan, usePlanFields } from '@/features/plan';
 import { TaskExecute, TaskQueue } from '@/features/task';
-import { RestExecute, RestQueue } from '@/features/rest';
+import { RestExecute } from '@/features/rest';
 import { CelebrationIcon } from '@/icons';
 import type { Field } from '@/models';
 import { formatFuzzyDuration } from '@/utils';
@@ -53,7 +53,7 @@ export function ExecuteLayout() {
 
   const item = plan.items[itemIndex];
 
-  const queueItems = plan.getItems(itemIndex + 1, 2);
+  const queueItems = plan.getQueueItems(itemIndex + 1, 2);
 
   const handleNextItem = () => {
     if (itemIndex + 1 < plan.items.length) {
@@ -133,17 +133,11 @@ export function ExecuteLayout() {
             {queueItems.map((item, index) => {
               return (
                 <div key={index} className={styles.queueItem}>
-                  {item.type === 'task' ? (
-                    <TaskQueue
-                      fields={getTaskFields(item.key)}
-                      name={item.name}
-                      setNumber={item.set || 0}
-                    />
-                  ) : (
-                    <RestQueue
-                      durationSeconds={item.durationSeconds}
-                    />
-                  )}
+                  <TaskQueue
+                    fields={getTaskFields(item.key)}
+                    name={item.name}
+                    setNumber={item.set || 0}
+                  />
                 </div>
               );
             })}

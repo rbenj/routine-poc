@@ -50,13 +50,6 @@ vi.mock('@/features/rest', () => ({
       <button onClick={onClickContinue}>Continue</button>
     </div>
   )),
-  RestQueue: vi.fn(({ durationSeconds }) => (
-    <div data-testid="rest-queue">
-      Rest (
-      {durationSeconds}
-      s)
-    </div>
-  )),
 }));
 
 describe('ExecuteLayout', () => {
