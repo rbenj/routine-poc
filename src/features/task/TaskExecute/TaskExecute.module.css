@@ -58,8 +58,7 @@
   font-size: var(--fs-h2);
   font-weight: var(--fw-h2);
   line-height: var(--lh-h2);
-  margin-bottom: var(--margin-h2-bottom);
-  margin-top: var(--margin-section);
+  margin-top: var(--margin-group);
   text-align: center;
 }
 

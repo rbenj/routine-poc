@@ -308,7 +308,7 @@ const data: PlanData[] = [
         estimatedSeconds: 240,
         fields: [
           {
-            name: 'Left Weight',
+            name: 'Weight (L)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 50,
@@ -316,7 +316,7 @@ const data: PlanData[] = [
             maxValue: 200,
           },
           {
-            name: 'Right Weight',
+            name: 'Weight (R)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 50,
@@ -334,15 +334,7 @@ const data: PlanData[] = [
         ],
         endFields: [
           {
-            name: 'Left RPE',
-            type: 'rpe',
-            initialValueSource: 'memory',
-            defaultValue: 5,
-            minValue: 1,
-            maxValue: 10,
-          },
-          {
-            name: 'Right RPE',
+            name: 'RPE',
             type: 'rpe',
             initialValueSource: 'memory',
             defaultValue: 5,
@@ -363,7 +355,7 @@ const data: PlanData[] = [
         estimatedSeconds: 240,
         fields: [
           {
-            name: 'Left Weight',
+            name: 'Weight (L)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 50,
@@ -371,7 +363,7 @@ const data: PlanData[] = [
             maxValue: 200,
           },
           {
-            name: 'Right Weight',
+            name: 'Weight (R)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 50,
@@ -389,15 +381,7 @@ const data: PlanData[] = [
         ],
         endFields: [
           {
-            name: 'Left RPE',
-            type: 'rpe',
-            initialValueSource: 'memory',
-            defaultValue: 5,
-            minValue: 1,
-            maxValue: 10,
-          },
-          {
-            name: 'Right RPE',
+            name: 'RPE',
             type: 'rpe',
             initialValueSource: 'memory',
             defaultValue: 5,
@@ -418,7 +402,7 @@ const data: PlanData[] = [
         estimatedSeconds: 240,
         fields: [
           {
-            name: 'Left Weight',
+            name: 'Weight (L)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 50,
@@ -426,7 +410,7 @@ const data: PlanData[] = [
             maxValue: 200,
           },
           {
-            name: 'Right Weight',
+            name: 'Weight (R)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 50,
@@ -444,15 +428,7 @@ const data: PlanData[] = [
         ],
         endFields: [
           {
-            name: 'Left RPE',
-            type: 'rpe',
-            initialValueSource: 'memory',
-            defaultValue: 5,
-            minValue: 1,
-            maxValue: 10,
-          },
-          {
-            name: 'Right RPE',
+            name: 'RPE',
             type: 'rpe',
             initialValueSource: 'memory',
             defaultValue: 5,
@@ -473,7 +449,7 @@ const data: PlanData[] = [
         estimatedSeconds: 240,
         fields: [
           {
-            name: 'Left Weight',
+            name: 'Weight (L)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 60,
@@ -481,7 +457,7 @@ const data: PlanData[] = [
             maxValue: 200,
           },
           {
-            name: 'Right Weight',
+            name: 'Weight (R)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 60,
@@ -499,15 +475,7 @@ const data: PlanData[] = [
         ],
         endFields: [
           {
-            name: 'Left RPE',
-            type: 'rpe',
-            initialValueSource: 'memory',
-            defaultValue: 5,
-            minValue: 1,
-            maxValue: 10,
-          },
-          {
-            name: 'Right RPE',
+            name: 'RPE',
             type: 'rpe',
             initialValueSource: 'memory',
             defaultValue: 5,
@@ -528,7 +496,7 @@ const data: PlanData[] = [
         estimatedSeconds: 240,
         fields: [
           {
-            name: 'Left Weight',
+            name: 'Weight (L)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 60,
@@ -536,7 +504,7 @@ const data: PlanData[] = [
             maxValue: 200,
           },
           {
-            name: 'Right Weight',
+            name: 'Weight (R)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 60,
@@ -554,15 +522,7 @@ const data: PlanData[] = [
         ],
         endFields: [
           {
-            name: 'Left RPE',
-            type: 'rpe',
-            initialValueSource: 'memory',
-            defaultValue: 5,
-            minValue: 1,
-            maxValue: 10,
-          },
-          {
-            name: 'Right RPE',
+            name: 'RPE',
             type: 'rpe',
             initialValueSource: 'memory',
             defaultValue: 5,
@@ -583,7 +543,7 @@ const data: PlanData[] = [
         estimatedSeconds: 240,
         fields: [
           {
-            name: 'Left Weight',
+            name: 'Weight (L)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 60,
@@ -591,7 +551,7 @@ const data: PlanData[] = [
             maxValue: 200,
           },
           {
-            name: 'Right Weight',
+            name: 'Weight (R)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 60,
@@ -609,15 +569,7 @@ const data: PlanData[] = [
         ],
         endFields: [
           {
-            name: 'Left RPE',
-            type: 'rpe',
-            initialValueSource: 'memory',
-            defaultValue: 5,
-            minValue: 1,
-            maxValue: 10,
-          },
-          {
-            name: 'Right RPE',
+            name: 'RPE',
             type: 'rpe',
             initialValueSource: 'memory',
             defaultValue: 5,
@@ -665,7 +617,7 @@ const data: PlanData[] = [
         estimatedSeconds: 60,
         fields: [
           {
-            name: 'Left Weight',
+            name: 'Weight (L)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 60,
@@ -700,7 +652,7 @@ const data: PlanData[] = [
         estimatedSeconds: 60,
         fields: [
           {
-            name: 'Right Weight',
+            name: 'Weight (R)',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 60,

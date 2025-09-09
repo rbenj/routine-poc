@@ -123,7 +123,7 @@ export function ExecuteLayout() {
         </>
       )}
 
-      {queueItems.length > 0 && (
+      {item.type === 'rest' && queueItems.length > 0 && (
         <div className={styles.queue}>
           <div className={styles.queueTitle}>
             Next up
