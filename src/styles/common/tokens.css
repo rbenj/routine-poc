@@ -124,7 +124,6 @@
 
 @media (max-width: 414px) {
   :root {
-    --fs-body: var(--fs-sm);  --lh-body: var(--lh-sm);
     --fs-h1: var(--fs-3xl);   --lh-h1: var(--lh-3xl);
     --fs-h2: var(--fs-2xl);   --lh-h2: var(--lh-2xl);
     --fs-h3: var(--fs-xl);    --lh-h3: var(--lh-xl);

@@ -22,7 +22,12 @@
 
 .field.time {
   background-color: transparent;
-  flex: 0 0 var(--grid-span-2);
+  max-width: var(--grid-span-2);
+}
+
+/* TODO: Come up with a solution for showing more than 2 fields (not including estimated time) */
+.field + .field + .field:not(.time) {
+  display: none;
 }
 
 .fieldValue {
