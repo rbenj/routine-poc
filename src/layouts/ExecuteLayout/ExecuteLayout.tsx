@@ -97,6 +97,7 @@ export function ExecuteLayout() {
         <>
           {item.type === 'task' ? (
             <TaskExecute
+              key={item.key}
               className={styles.item}
               endFields={getTaskEndFields(item.key)}
               estimatedSeconds={item.estimatedSeconds}

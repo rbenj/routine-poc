@@ -74,15 +74,7 @@ const data: PlanData[] = [
         estimatedSeconds: 120,
         fields: [
           {
-            name: 'Left Weight',
-            type: 'weight',
-            initialValueSource: 'memory',
-            defaultValue: 30,
-            minValue: 0,
-            maxValue: 100,
-          },
-          {
-            name: 'Right Weight',
+            name: 'Weight',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 30,
@@ -96,6 +88,16 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -127,6 +129,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -154,6 +166,16 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -185,6 +207,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -212,6 +244,16 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -243,6 +285,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -256,12 +308,20 @@ const data: PlanData[] = [
         estimatedSeconds: 240,
         fields: [
           {
-            name: 'Weight',
+            name: 'Left Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 25,
+            defaultValue: 50,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
+          },
+          {
+            name: 'Right Weight',
+            type: 'weight',
+            initialValueSource: 'memory',
+            defaultValue: 50,
+            minValue: 0,
+            maxValue: 200,
           },
           {
             name: 'Reps',
@@ -270,6 +330,24 @@ const data: PlanData[] = [
             defaultValue: 12,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'Left RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+          {
+            name: 'Right RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -285,12 +363,20 @@ const data: PlanData[] = [
         estimatedSeconds: 240,
         fields: [
           {
-            name: 'Weight',
+            name: 'Left Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 25,
+            defaultValue: 50,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
+          },
+          {
+            name: 'Right Weight',
+            type: 'weight',
+            initialValueSource: 'memory',
+            defaultValue: 50,
+            minValue: 0,
+            maxValue: 200,
           },
           {
             name: 'Reps',
@@ -299,6 +385,24 @@ const data: PlanData[] = [
             defaultValue: 12,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'Left RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+          {
+            name: 'Right RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -314,12 +418,20 @@ const data: PlanData[] = [
         estimatedSeconds: 240,
         fields: [
           {
-            name: 'Weight',
+            name: 'Left Weight',
             type: 'weight',
             initialValueSource: 'memory',
-            defaultValue: 25,
+            defaultValue: 50,
             minValue: 0,
-            maxValue: 100,
+            maxValue: 200,
+          },
+          {
+            name: 'Right Weight',
+            type: 'weight',
+            initialValueSource: 'memory',
+            defaultValue: 50,
+            minValue: 0,
+            maxValue: 200,
           },
           {
             name: 'Reps',
@@ -328,6 +440,24 @@ const data: PlanData[] = [
             defaultValue: 12,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'Left RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+          {
+            name: 'Right RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -343,7 +473,15 @@ const data: PlanData[] = [
         estimatedSeconds: 240,
         fields: [
           {
-            name: 'Weight',
+            name: 'Left Weight',
+            type: 'weight',
+            initialValueSource: 'memory',
+            defaultValue: 60,
+            minValue: 0,
+            maxValue: 200,
+          },
+          {
+            name: 'Right Weight',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 60,
@@ -357,6 +495,24 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'Left RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+          {
+            name: 'Right RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -372,7 +528,15 @@ const data: PlanData[] = [
         estimatedSeconds: 240,
         fields: [
           {
-            name: 'Weight',
+            name: 'Left Weight',
+            type: 'weight',
+            initialValueSource: 'memory',
+            defaultValue: 60,
+            minValue: 0,
+            maxValue: 200,
+          },
+          {
+            name: 'Right Weight',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 60,
@@ -388,6 +552,24 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'Left RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+          {
+            name: 'Right RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -401,7 +583,15 @@ const data: PlanData[] = [
         estimatedSeconds: 240,
         fields: [
           {
-            name: 'Weight',
+            name: 'Left Weight',
+            type: 'weight',
+            initialValueSource: 'memory',
+            defaultValue: 60,
+            minValue: 0,
+            maxValue: 200,
+          },
+          {
+            name: 'Right Weight',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 60,
@@ -415,6 +605,24 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'Left RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+          {
+            name: 'Right RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -451,13 +659,13 @@ const data: PlanData[] = [
       },
       {
         type: 'task',
-        key: '59d54ddc',
+        key: '8skj2ms7',
         name: 'Waiter Walk',
-        set: 0,
-        estimatedSeconds: 90,
+        set: 1,
+        estimatedSeconds: 60,
         fields: [
           {
-            name: 'Weight',
+            name: 'Left Weight',
             type: 'weight',
             initialValueSource: 'memory',
             defaultValue: 60,
@@ -468,9 +676,54 @@ const data: PlanData[] = [
             name: 'Time',
             type: 'timer_down',
             initialValueSource: 'default',
-            defaultValue: 90,
+            defaultValue: 60,
             minValue: 0,
             maxValue: 300,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
+      },
+      {
+        type: 'task',
+        key: '59d54ddc',
+        name: 'Waiter Walk',
+        set: 2,
+        estimatedSeconds: 60,
+        fields: [
+          {
+            name: 'Right Weight',
+            type: 'weight',
+            initialValueSource: 'memory',
+            defaultValue: 60,
+            minValue: 0,
+            maxValue: 200,
+          },
+          {
+            name: 'Time',
+            type: 'timer_down',
+            initialValueSource: 'default',
+            defaultValue: 60,
+            minValue: 0,
+            maxValue: 300,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -502,6 +755,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -529,6 +792,16 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -560,6 +833,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -587,6 +870,16 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -618,6 +911,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -645,6 +948,16 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -676,6 +989,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -703,6 +1026,16 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -734,6 +1067,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -761,6 +1104,16 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -792,6 +1145,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -821,6 +1184,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -840,6 +1213,16 @@ const data: PlanData[] = [
             defaultValue: 50,
             minValue: 1,
             maxValue: 100,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -863,6 +1246,16 @@ const data: PlanData[] = [
             maxValue: 100,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -882,6 +1275,16 @@ const data: PlanData[] = [
             defaultValue: 25,
             minValue: 1,
             maxValue: 100,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -940,6 +1343,16 @@ const data: PlanData[] = [
             maxValue: 300,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -967,6 +1380,16 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -998,6 +1421,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -1025,6 +1458,16 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -1056,6 +1499,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -1083,6 +1536,16 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -1114,6 +1577,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -1141,6 +1614,16 @@ const data: PlanData[] = [
             defaultValue: 10,
             minValue: 1,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -1172,6 +1655,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -1201,6 +1694,16 @@ const data: PlanData[] = [
             maxValue: 20,
           },
         ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
+          },
+        ],
       },
       {
         type: 'rest',
@@ -1220,6 +1723,16 @@ const data: PlanData[] = [
             defaultValue: 300,
             minValue: 0,
             maxValue: 900,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
@@ -1248,6 +1761,16 @@ const data: PlanData[] = [
             defaultValue: 3,
             minValue: 0,
             maxValue: 20,
+          },
+        ],
+        endFields: [
+          {
+            name: 'RPE',
+            type: 'rpe',
+            initialValueSource: 'memory',
+            defaultValue: 5,
+            minValue: 1,
+            maxValue: 10,
           },
         ],
       },
