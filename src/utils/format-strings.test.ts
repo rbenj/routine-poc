@@ -1,5 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import {
+  formatDate,
   formatDistance,
   formatFuzzyDuration,
   formatNumber,
@@ -10,6 +11,23 @@ import {
 } from './format-strings';
 
 describe('format-strings', () => {
+  describe('formatDate', () => {
+    it('formats date as M/D', () => {
+      const date = new Date('2024-01-15T10:30:00Z');
+      expect(formatDate(date)).toBe('1/15');
+    });
+
+    it('formats date with single digit month and day', () => {
+      const date = new Date('2024-03-05T10:30:00Z');
+      expect(formatDate(date)).toBe('3/5');
+    });
+
+    it('formats date with double digit month and day', () => {
+      const date = new Date('2024-12-25T10:30:00Z');
+      expect(formatDate(date)).toBe('12/25');
+    });
+  });
+
   describe('formatDistance', () => {
     it('formats distance with default unit', () => {
       expect(formatDistance(5.5)).toBe('5.5 mi');

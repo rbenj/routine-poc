@@ -5,8 +5,7 @@
   position: relative;
 }
 
-.title,
-.time {
+.title {
   align-items: center;
   display: flex;
   font-weight: bold;
@@ -38,8 +37,10 @@
   margin-left: auto;
 }
 
-.time {
+.meta {
   border-color: currentColor;
   color: var(--color-deco-500);
-  flex: 0 0 var(--grid-span-2);
+  flex: 0 0 var(--grid-span-3);
+  display: flex;
+  gap: var(--grid-gutter);
 }

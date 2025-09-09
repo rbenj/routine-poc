@@ -6,12 +6,16 @@ import { TaskExecute, TaskQueue } from '@/features/task';
 import { RestExecute } from '@/features/rest';
 import { CelebrationIcon } from '@/icons';
 import type { Field } from '@/models';
+import { setPlanCompletionDate } from '@/services/planCompletion';
 import { formatFuzzyDuration } from '@/utils';
 import styles from './ExecuteLayout.module.css';
 
 export function ExecuteLayout() {
   const [itemIndex, setItemIndex] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
+
+  const { planSlug } = useParams();
+  const plan = usePlan(planSlug);
 
   useEffect(() => {
     const metaEl = document.querySelector('meta[name="theme-color"]');
@@ -32,8 +36,11 @@ export function ExecuteLayout() {
     };
   }, []);
 
-  const { planSlug } = useParams();
-  const plan = usePlan(planSlug);
+  useEffect(() => {
+    if (isComplete && plan) {
+      setPlanCompletionDate(plan.slug);
+    }
+  }, [isComplete, plan]);
 
   const {
     getTaskFields,

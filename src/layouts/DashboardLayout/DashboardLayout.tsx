@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import { PlanCard, usePlansByDay } from '@/features/plan';
+import { getPlanCompletionDate } from '@/services/planCompletion';
 import { cardStyles } from '@/styles';
 import { DayOfWeek } from '@/types';
 import styles from './DashboardLayout.module.css';
@@ -31,6 +32,7 @@ export function DashboardLayout() {
                 className={styles.plan}
                 estimatedSeconds={plan.getEstimatedSeconds()}
                 key={plan.name}
+                lastCompletedDate={getPlanCompletionDate(plan.slug)}
                 name={plan.name}
                 to={`/plan/${plan.slug}`}
               />

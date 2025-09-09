@@ -5,18 +5,23 @@ import { usePlansByDay } from '@/features/plan';
 import { Plan } from '@/models';
 import { DayOfWeek } from '@/types';
 
-// Mock the hooks
+// Mock the hooks and services
 vi.mock('@/features/plan', () => ({
   usePlansByDay: vi.fn(),
-  PlanCard: vi.fn(({ name, estimatedSeconds }) => (
+  PlanCard: vi.fn(({ name, estimatedSeconds, lastCompletedDate }) => (
     <div data-testid="plan-card">
       {name}
       {' '}
       (
       {estimatedSeconds}
       s)
+      {lastCompletedDate && ` - Last completed: ${lastCompletedDate.toLocaleDateString()}`}
     </div>
   )),
+}));
+
+vi.mock('@/services/planCompletion', () => ({
+  getPlanCompletionDate: vi.fn(),
 }));
 
 describe('DashboardLayout', () => {
@@ -77,5 +82,27 @@ describe('DashboardLayout', () => {
     render(<DashboardLayout />);
 
     expect(screen.getByText('You have 0 plans assigned')).toBeInTheDocument();
+  });
+
+  it('passes completion dates to PlanCard components', async () => {
+    const { getPlanCompletionDate } = await import('@/services/planCompletion');
+    const mockCompletionDate = new Date('2024-01-15T10:30:00Z');
+
+    vi.mocked(getPlanCompletionDate)
+      .mockReturnValueOnce(null) // First plan has no completion date
+      .mockReturnValueOnce(mockCompletionDate) // Second plan has completion date
+      .mockReturnValueOnce(null); // Third plan has no completion date
+
+    render(<DashboardLayout />);
+
+    const planCards = screen.getAllByTestId('plan-card');
+    expect(planCards[0]).toHaveTextContent('Monday Plan 1');
+    expect(planCards[0]).not.toHaveTextContent('Last completed');
+
+    expect(planCards[1]).toHaveTextContent('Monday Plan 2');
+    expect(planCards[1]).toHaveTextContent('Last completed');
+
+    expect(planCards[2]).toHaveTextContent('Wednesday Plan');
+    expect(planCards[2]).not.toHaveTextContent('Last completed');
   });
 });

@@ -48,4 +48,43 @@ describe('PlanCard', () => {
     );
     expect(screen.getByText('2 min')).toBeInTheDocument();
   });
+
+  it('displays completion date when provided', () => {
+    const completionDate = new Date('2024-01-15T10:30:00Z');
+    render(
+      <PlanCard
+        estimatedSeconds={1800}
+        lastCompletedDate={completionDate}
+        name="Test Plan"
+        to="/plan/1"
+      />,
+    );
+
+    expect(screen.getByText('✓1/15')).toBeInTheDocument();
+  });
+
+  it('does not display completion date when not provided', () => {
+    render(
+      <PlanCard
+        estimatedSeconds={1800}
+        name="Test Plan"
+        to="/plan/1"
+      />,
+    );
+
+    expect(screen.queryByText(/✓/)).not.toBeInTheDocument();
+  });
+
+  it('does not display completion date when null', () => {
+    render(
+      <PlanCard
+        estimatedSeconds={1800}
+        lastCompletedDate={null}
+        name="Test Plan"
+        to="/plan/1"
+      />,
+    );
+
+    expect(screen.queryByText(/✓/)).not.toBeInTheDocument();
+  });
 });

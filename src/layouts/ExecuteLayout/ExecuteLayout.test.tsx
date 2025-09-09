@@ -5,6 +5,11 @@ import { usePlan, usePlanFields } from '@/features/plan';
 import { Plan } from '@/models';
 import { DayOfWeek } from '@/types';
 
+// Mock the plan completion service
+vi.mock('@/services/planCompletion', () => ({
+  setPlanCompletionDate: vi.fn(),
+}));
+
 // Mock the hooks
 vi.mock('@/features/plan', () => ({
   usePlan: vi.fn(),
@@ -146,5 +151,31 @@ describe('ExecuteLayout', () => {
     fireEvent.click(screen.getByText('Continue'));
 
     expect(screen.getByText('Plan completed!')).toBeInTheDocument();
+  });
+
+  it('tracks plan completion when all items are completed', async () => {
+    const { setPlanCompletionDate } = await import('@/services/planCompletion');
+
+    render(<ExecuteLayout />);
+
+    // Complete all items
+    fireEvent.click(screen.getByText('Continue')); // First task
+    fireEvent.click(screen.getByText('Continue')); // Rest
+    fireEvent.click(screen.getByText('Continue')); // Second task
+
+    // Verify completion tracking was called
+    expect(setPlanCompletionDate).toHaveBeenCalledWith(mockPlan.slug);
+  });
+
+  it('does not track completion when plan is not complete', async () => {
+    const { setPlanCompletionDate } = await import('@/services/planCompletion');
+
+    render(<ExecuteLayout />);
+
+    // Complete only first task
+    fireEvent.click(screen.getByText('Continue'));
+
+    // Verify completion tracking was not called
+    expect(setPlanCompletionDate).not.toHaveBeenCalled();
   });
 });

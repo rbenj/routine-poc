@@ -1,3 +1,9 @@
+export function formatDate(date: Date): string {
+  const month = (date.getMonth() + 1).toString();
+  const day = date.getDate().toString();
+  return `${month}/${day}`;
+}
+
 export function formatDistance(miles: number, customUnit = ''): string {
   return `${formatNumber(miles, 1)} ${customUnit || 'mi'}`;
 }

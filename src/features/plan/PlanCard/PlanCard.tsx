@@ -2,12 +2,13 @@ import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import { GoIcon } from '@/icons/icons';
 import { cardStyles } from '@/styles';
-import { formatFuzzyDuration } from '@/utils';
+import { formatDate, formatFuzzyDuration } from '@/utils';
 import styles from './PlanCard.module.css';
 
 interface PlanCardProps {
   className?: string;
   estimatedSeconds: number;
+  lastCompletedDate?: Date | null;
   name: string;
   to: string;
 }
@@ -15,6 +16,7 @@ interface PlanCardProps {
 export function PlanCard({
   className,
   estimatedSeconds,
+  lastCompletedDate,
   name,
   to,
 }: PlanCardProps) {
@@ -27,8 +29,17 @@ export function PlanCard({
         </Link>
       </div>
 
-      <div className={classNames(styles.time, cardStyles.smallCard)}>
-        {formatFuzzyDuration(estimatedSeconds, true)}
+      <div className={classNames(styles.meta, cardStyles.smallCard)}>
+        <span>
+          {formatFuzzyDuration(estimatedSeconds, true)}
+        </span>
+
+        {lastCompletedDate && (
+          <span>
+            ✓
+            {formatDate(lastCompletedDate)}
+          </span>
+        )}
       </div>
     </div>
   );
