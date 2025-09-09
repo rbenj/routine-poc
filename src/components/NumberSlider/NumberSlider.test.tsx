@@ -12,6 +12,7 @@ describe('NumberSlider', () => {
   it('renders with required props', () => {
     render(
       <NumberSlider
+        fieldName="test-field"
         formattedValue="2"
         onChange={vi.fn()}
         value={2}
@@ -29,6 +30,7 @@ describe('NumberSlider', () => {
     const { container } = render(
       <NumberSlider
         className="custom-class"
+        fieldName="test-field"
         formattedValue="2"
         onChange={vi.fn()}
         value={2}
@@ -44,6 +46,7 @@ describe('NumberSlider', () => {
     const onChange = vi.fn();
     render(
       <NumberSlider
+        fieldName="test-field"
         formattedValue="2"
         onChange={onChange}
         value={2}
@@ -61,6 +64,7 @@ describe('NumberSlider', () => {
   it('displays label when labelMap is provided', () => {
     render(
       <NumberSlider
+        fieldName="test-field"
         formattedValue="2"
         onChange={vi.fn()}
         value={2}
@@ -76,6 +80,7 @@ describe('NumberSlider', () => {
   it('does not display label when value is not in labelMap', () => {
     render(
       <NumberSlider
+        fieldName="test-field"
         formattedValue="4"
         onChange={vi.fn()}
         value={4}
@@ -93,6 +98,7 @@ describe('NumberSlider', () => {
   it('uses custom step value', () => {
     render(
       <NumberSlider
+        fieldName="test-field"
         formattedValue="2"
         onChange={vi.fn()}
         value={2}
