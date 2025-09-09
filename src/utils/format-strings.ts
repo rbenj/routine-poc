@@ -28,6 +28,10 @@ export function formatMinutes(seconds: number, customUnit = ''): string {
   return `${m} ${customUnit || 'min'}`;
 }
 
+export function formatRPE(value: number): string {
+  return `${formatNumber(value, 0)}/10`;
+}
+
 export function formatSlug(value: string): string {
   return value
     .toLowerCase()

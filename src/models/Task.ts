@@ -2,6 +2,7 @@ import type { FieldData } from './Field';
 import { Field } from './Field';
 
 export interface TaskData {
+  endFields?: FieldData[];
   estimatedSeconds: number;
   fields: FieldData[];
   key: string;
@@ -11,6 +12,7 @@ export interface TaskData {
 }
 
 export class Task {
+  endFields: Field[];
   estimatedSeconds: number;
   fields: Field[];
   key: string;
@@ -19,6 +21,7 @@ export class Task {
   type: 'task';
 
   constructor(raw: TaskData) {
+    this.endFields = raw.endFields?.map(v => new Field(v)) ?? [];
     this.estimatedSeconds = raw.estimatedSeconds;
     this.fields = raw.fields.map(v => new Field(v));
     this.key = raw.key;

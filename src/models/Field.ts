@@ -4,6 +4,7 @@ export type FieldType =
   'distance' |
   'float' |
   'int' |
+  'rpe' |
   'timer_down' |
   'weight';
 

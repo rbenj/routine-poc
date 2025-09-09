@@ -1,5 +1,5 @@
 import type { FieldType } from '@/models';
-import { formatDistance, formatNumber, formatTimer, formatWeight } from '@/utils';
+import { formatDistance, formatNumber, formatRPE, formatTimer, formatWeight } from '@/utils';
 
 const formatters: {
   [K in FieldType]: (value: number) => string;
@@ -7,6 +7,7 @@ const formatters: {
   distance: formatDistance,
   float: (value: number) => formatNumber(value, 2),
   int: (value: number) => formatNumber(value, 0),
+  rpe: (value: number) => formatRPE(value),
   timer_down: formatTimer,
   weight: formatWeight,
 };

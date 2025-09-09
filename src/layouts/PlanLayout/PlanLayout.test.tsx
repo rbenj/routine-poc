@@ -71,9 +71,18 @@ describe('PlanLayout', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.mocked(usePlan).mockReturnValue(mockPlan);
+
+    // Create mock functions
+    const mockGetTaskFields = vi.fn().mockReturnValue([]);
+    const mockGetTaskEndFields = vi.fn().mockReturnValue([]);
+    const mockSetTaskFieldValue = vi.fn();
+    const mockSetTaskEndFieldValue = vi.fn();
+
     vi.mocked(usePlanFields).mockReturnValue({
-      getTaskFields: vi.fn().mockReturnValue([]),
-      setTaskFieldValue: vi.fn(),
+      getTaskFields: mockGetTaskFields,
+      getTaskEndFields: mockGetTaskEndFields,
+      setTaskFieldValue: mockSetTaskFieldValue,
+      setTaskEndFieldValue: mockSetTaskEndFieldValue,
     });
   });
 

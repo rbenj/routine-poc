@@ -53,7 +53,30 @@
   z-index: 1;
 }
 
+.endFieldsTitle {
+  color: var(--color-text-secondary);
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-h2);
+  line-height: var(--lh-h2);
+  margin-bottom: var(--margin-h2-bottom);
+  margin-top: var(--margin-section);
+  text-align: center;
+}
+
+.endFields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--margin-group);
+  width: 100%;
+}
+
+.endFieldKey {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-h4);
+  line-height: var(--lh-h4);
+}
+
 .timer,
 .continueButton {
-  margin-top: var(--margin-group);
+  margin-top: var(--margin-section);
 }

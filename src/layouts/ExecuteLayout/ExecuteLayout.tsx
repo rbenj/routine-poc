@@ -35,7 +35,12 @@ export function ExecuteLayout() {
   const { planSlug } = useParams();
   const plan = usePlan(planSlug);
 
-  const { getTaskFields, setTaskFieldValue } = usePlanFields(plan);
+  const {
+    getTaskFields,
+    getTaskEndFields,
+    setTaskFieldValue,
+    setTaskEndFieldValue,
+  } = usePlanFields(plan);
 
   if (!plan) {
     return <div>404</div>;
@@ -93,9 +98,13 @@ export function ExecuteLayout() {
           {item.type === 'task' ? (
             <TaskExecute
               className={styles.item}
+              endFields={getTaskEndFields(item.key)}
               estimatedSeconds={item.estimatedSeconds}
               fields={getTaskFields(item.key)}
               name={item.name}
+              onChangeEndFieldValue={(field: Field, value: number) => {
+                setTaskEndFieldValue(item.key, field.key, value);
+              }}
               onChangeFieldValue={(field: Field, value: number) => {
                 setTaskFieldValue(item.key, field.key, value);
               }}

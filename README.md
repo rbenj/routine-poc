@@ -27,3 +27,10 @@ See the [ROADMAP.md](./ROADMAP.md) for a more complete list of what's next.
 
 - Prototyped with OpenAI o3 and Claude Sonnet 4 to validate core flows (code largely scrapped).
 - Generated unit and integration test coverage with Claude Sonnet 4; manual tuning still needed.
+
+## Vocab
+
+- *Plan*: A list of _tasks_ that can be assigned and completed one-off or on a schedule.
+- *Task*: A single activity to be completed in a _plan_.
+- *Rest*: A specialized type of _task_, but nothing to complete other than chilling out for a period of time.
+- *Field*: The smallest unit of work to be completed in a _task_. These are the details that define a _task_.

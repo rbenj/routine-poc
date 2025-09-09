@@ -24,3 +24,6 @@ coverage
 *.njsproj
 *.sln
 *.sw?
+
+# Pile on here
+/scratch.txt
