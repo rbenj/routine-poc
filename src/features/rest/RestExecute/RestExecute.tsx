@@ -29,9 +29,9 @@ export function RestExecute({
 
   return (
     <div className={classNames(styles.restExecute, className)}>
-      <div className={styles.title}>
+      <h2 className={styles.title}>
         Rest
-      </div>
+      </h2>
 
       <div className={styles.description}>
         {randomMessage()}

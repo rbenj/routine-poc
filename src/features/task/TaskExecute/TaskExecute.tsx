@@ -46,9 +46,9 @@ export function TaskExecute({
 
   return (
     <div className={classNames(styles.taskExecute, className)}>
-      <div className={styles.title}>
+      <h2 className={styles.title}>
         {name}
-      </div>
+      </h2>
 
       {estimatedSeconds > 0 && (
         <div className={styles.description}>

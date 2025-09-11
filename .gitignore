@@ -25,5 +25,12 @@ coverage
 *.sln
 *.sw?
 
+# Cypress
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+cypress/results/
+cypress/reports/
+
 # Pile on here
 /scratch.txt

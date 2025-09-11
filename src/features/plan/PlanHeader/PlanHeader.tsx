@@ -27,9 +27,9 @@ export function PlanHeader({
       />
 
       <div className={styles.meta}>
-        <h2 className={styles.title}>
+        <h1 className={styles.title}>
           {name}
-        </h2>
+        </h1>
 
         <div className={styles.time}>
           {timeText}

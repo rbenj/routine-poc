@@ -1,3 +1,4 @@
+import { useId } from 'react';
 import classNames from 'classnames';
 import { MinusIcon, PlusIcon } from '@/icons';
 import styles from './AdjustNumber.module.css';
@@ -19,6 +20,8 @@ export function AdjustNumber({
   unitLabel,
   value,
 }: AdjustNumberProps) {
+  const stableId = useId();
+
   const handleIncrement = () => {
     if (typeof max === 'number' && value >= max) {
       onChange(max);
@@ -53,21 +56,37 @@ export function AdjustNumber({
     }
   };
 
+  const inputId = `adjust-number-value-${stableId}`;
+
   return (
     <div className={classNames(styles.adjustNumber, className)}>
       <div className={styles.field}>
-        <button className={styles.upButton} onClick={handleIncrement}>
+        <button
+          aria-controls={inputId}
+          aria-label="Increase value"
+          className={styles.upButton}
+          onClick={handleIncrement}
+          type="button"
+        >
           <PlusIcon />
         </button>
 
         <input
+          aria-label="Value"
           className={styles.input}
+          id={inputId}
+          onChange={handleChange}
           type="text"
           value={value}
-          onChange={handleChange}
         />
 
-        <button className={styles.downButton} onClick={handleDecrement}>
+        <button
+          aria-controls={inputId}
+          aria-label="Decrease value"
+          className={styles.downButton}
+          onClick={handleDecrement}
+          type="button"
+        >
           <MinusIcon />
         </button>
       </div>

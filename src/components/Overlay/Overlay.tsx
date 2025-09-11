@@ -32,6 +32,7 @@ export function Overlay({
       </div>
 
       <IconButton
+        aria-label="Close"
         className={styles.closeButton}
         icon={<CloseIcon />}
         onClick={handleClose}
